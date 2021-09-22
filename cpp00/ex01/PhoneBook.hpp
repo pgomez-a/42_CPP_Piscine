@@ -2,6 +2,7 @@
 # define PHONE_BOOK_H
 
 # include "Contact.hpp"
+# include <iostream>
 # include <iomanip>
 
 # define CONTACT_TOT 8

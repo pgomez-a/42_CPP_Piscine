@@ -38,6 +38,8 @@ void	PhoneBook::add(void)
 	this->contact[this->_total].set = 1;
 	if (this->_total < CONTACT_TOT - 1)
 		this->_total++;
+	else
+		this->_total = 0;
 	return ;
 }
 
@@ -74,7 +76,7 @@ void	PhoneBook::search(void) const
 	int		index;
 
 	index = 0;
-	while (index <= this->_total && this->contact[index].set == 1)
+	while (index < CONTACT_TOT && this->contact[index].set == 1)
 	{
 		std::cout << "|" << std::setw(10) << index << "|"
 			<< format_output(this->contact[index].firstName) << "|"
@@ -83,7 +85,7 @@ void	PhoneBook::search(void) const
 			<< "|" << std::endl;
 		index++;
 	}
-	if (this->_total > 0)
+	if (this->contact[0].set == 1)
 	{
 		std::cout << "Which contact do you want to see? Index:" << std::endl;
 		std::cin >> index;
@@ -93,7 +95,7 @@ void	PhoneBook::search(void) const
 			std::cin.ignore(256,'\n');
 			return ;
 		}
-		if (index >= 0 && (index < this->_total || index == 7))
+		if (index >= 0 && index < CONTACT_TOT && this->contact[index].set == 1)
 		{
 			std::cout << "First Name: " << this->contact[index].firstName << std::endl;
 			std::cout << "Last Name: " << this->contact[index].lastName << std::endl;
