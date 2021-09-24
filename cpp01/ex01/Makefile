@@ -1,6 +1,6 @@
 .PHONY:	all clean fclean re
 
-NAME		= more_braiinnnzzzz
+NAME		= moar_braiinnnzzzz
 
 SRCS		= main.cpp		\
 		  Zombie.cpp		\

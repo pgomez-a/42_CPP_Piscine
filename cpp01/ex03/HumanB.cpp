@@ -3,15 +3,7 @@
 /**
  ** Constructors of HumanB object
  ** Always take a name
- ** It can also take an address to a weapon
  **/
-
-HumanB::HumanB(std::string name, Weapon& weapon)
-{
-	this->name = name;
-	this->weapon = &weapon;
-	return ;
-}
 
 HumanB::HumanB(std::string name)
 {
@@ -34,9 +26,8 @@ HumanB::~HumanB(void)
 
 void	HumanB::attack(void) const
 {
-	std::string	weapon_type;
+	std::string&	weapon_type = this->weapon->getType();
 
-	weapon_type = this->weapon->getType();
 	std::cout << this->name << " attacks with his " << weapon_type << std::endl;
 	return ;
 }
