@@ -12,7 +12,7 @@ Karen::~Karen(void)
 
 void	Karen::complain(std::string level)
 {
-	call_func	functions [4];
+	call_func	functions[4];
 	std::string	book[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int		count;
 
