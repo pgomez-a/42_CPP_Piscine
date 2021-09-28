@@ -1,5 +1,11 @@
 #include "Fixed.hpp"
 
+/**
+ ** Default constructor ~ Canonical form
+ ** Copy constructor ~ Canonical form
+ ** Destructor for a Fixed object
+ **/
+
 Fixed::Fixed(void) : _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -19,18 +25,30 @@ Fixed::~Fixed(void)
 	return ;
 }
 
+/**
+ ** Overload Assignation Operation ~ Canonical form
+ **/
+
 Fixed&	Fixed::operator=(Fixed const & fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->_value = fixed.getRawBits();
-	return *this;
+	return (*this);
 }
+
+/**
+ ** Get the value of the Fixed Point Number as it was an int
+ **/
 
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
+
+/**
+ ** Set the value of the Fixed Point Number as it was an int
+ **/
 
 void	Fixed::setRawBits(int const raw)
 {

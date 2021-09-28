@@ -2,6 +2,9 @@
 
 /**
  ** Default constructor ~ Canonical form
+ ** Int / Float constructors
+ ** Copy constructor ~ Canonical form
+ ** Destructor for a Fixed object
  **/
 
 Fixed::Fixed(void) : _value(0)
@@ -10,20 +13,12 @@ Fixed::Fixed(void) : _value(0)
 	return ;
 }
 
-/**
- ** Input constructor: Fixed receives an integer number
- **/
-
 Fixed::Fixed(int const value)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->_value = value << this->_fbits;
 	return ;
 }
-
-/**
- ** Float constructor: Fixed receives a floating point number
- **/
 
 Fixed::Fixed(float const value)
 {
@@ -32,20 +27,12 @@ Fixed::Fixed(float const value)
 	return ;
 }
 
-/**
- ** Copy constructor ~ Canonical form
- **/
-
 Fixed::Fixed(Fixed const & fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 	return ;
 }
-
-/**
- ** Destructor for a Fixed object
- **/
 
 Fixed::~Fixed(void)
 {
@@ -54,19 +41,18 @@ Fixed::~Fixed(void)
 }
 
 /**
- ** Assignation Operation ~ Canonical form
+ ** Overload Assignation Operation ~ Canonical form
  **/
 
 Fixed&	Fixed::operator=(Fixed const & fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->_value = fixed.getRawBits();
-	return *this;
+	return (*this);
 }
 
 /**
- ** Return the value of the fixed point number without
- ** as it was only an integer
+ ** Get the value of the Fixed Point Number as it was an int
  **/
 
 int	Fixed::getRawBits(void) const
@@ -75,8 +61,7 @@ int	Fixed::getRawBits(void) const
 }
 
 /**
- ** Set the value of the fixed point number as it was
- ** only an integer
+ ** Set the value of the Fixed Point Number as it was an int
  **/
 
 void	Fixed::setRawBits(int const raw)
@@ -101,19 +86,16 @@ int	Fixed::toInt(void) const
 /**
  ** Return the fixed point number with the decimal part
  **/
+
 float	Fixed::toFloat(void) const
 {
 	return ((double)this->_value / (double)(1 << this->_fbits));
 }
 
-/**
- ** Position of the binary point for the fixed point number
- **/
-
 const int	Fixed::_fbits = 8;
 
 /**
- ** Output the value of the fixed point number
+ ** Overload Ostream Operation ~ Output the Fixed Point Number on the stdout 
  **/
 
 std::ostream&	operator<<(std::ostream& out, Fixed const & fixed)
