@@ -5,9 +5,8 @@
  ** Give a name to the new Zombie
  **/
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name) : _name(name)
 {
-	this->_name = name;
 	return ;
 }
 

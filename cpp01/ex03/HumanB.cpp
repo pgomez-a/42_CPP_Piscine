@@ -5,9 +5,14 @@
  ** Always take a name
  **/
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name, Weapon& weapon) : _weapon(&weapon)
 {
-	this->name = name;
+	this->_name = name;
+	return ;
+}
+
+HumanB::HumanB(std::string name) : _name(name)
+{
 	return ;
 }
 
@@ -26,9 +31,9 @@ HumanB::~HumanB(void)
 
 void	HumanB::attack(void) const
 {
-	std::string&	weapon_type = this->weapon->getType();
+	const std::string&	weapon_type = this->_weapon->getType();
 
-	std::cout << this->name << " attacks with his " << weapon_type << std::endl;
+	std::cout << this->_name << " attacks with his " << weapon_type << std::endl;
 	return ;
 }
 
@@ -39,6 +44,6 @@ void	HumanB::attack(void) const
 
 void	HumanB::setWeapon(Weapon& weapon)
 {
-	this->weapon = &weapon;
+	this->_weapon = &weapon;
 	return ;
 }

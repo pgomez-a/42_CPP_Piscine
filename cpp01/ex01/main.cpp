@@ -8,8 +8,8 @@ int	main(void)
 	Zombie*	temp_horde;
 	int	size;
 
-	size = 5;
-	horde = zombieHorde(size, "Pablo");
+	size = 4;
+	horde = zombieHorde(size, "Deku");
 	temp_horde = horde;
 	while (size > 0)
 	{

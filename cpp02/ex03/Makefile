@@ -1,10 +1,10 @@
 .PHONY:	all clean fclean re
 
-NAME		= more_braiinnnzzzz
+NAME		= my_first_orthodox
 
-SRCS		= main.cpp		\
-		  Zombie.cpp		\
-		  ZombieHorde.cpp
+SRCS		= main.cpp	\
+		  Fixed.cpp	\
+		  Point.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

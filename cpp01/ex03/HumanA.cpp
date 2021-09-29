@@ -5,9 +5,9 @@
  ** Always take a name and a reference to a weapon
  **/
 
-HumanA::HumanA(std::string name, Weapon& weapon) : weapon(weapon)
+HumanA::HumanA(std::string name, Weapon& weapon) : _weapon(weapon)
 {
-	this->name = name;
+	this->_name = name;
 	return ;
 }
 
@@ -26,8 +26,8 @@ HumanA::~HumanA(void)
 
 void	HumanA::attack(void) const
 {
-	std::string&	weapon_type = this->weapon.getType();
+	const std::string&	weapon_type = this->_weapon.getType();
 
-	std::cout << this->name << " attacks with his " << weapon_type << std::endl;
+	std::cout << this->_name << " attacks with his " << weapon_type << std::endl;
 	return ;
 }
