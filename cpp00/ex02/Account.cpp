@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/28 17:03:25 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/09/28 17:51:42 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
 
@@ -156,7 +168,7 @@ void	Account::displayStatus(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	char	buff[100];
+	char		buff[100];
 	time_t		raw_time;
 	struct tm	*time;
 

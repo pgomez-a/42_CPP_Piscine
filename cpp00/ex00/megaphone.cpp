@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/28 16:42:43 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/09/28 16:42:59 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 
 int	main(int argc, char *argv[])
 {
 	std::string	user_input;
-	int		count_y;
-	int		count_x;
+	int			count_y;
+	int			count_x;
 
 	if (argc > 1)
 	{

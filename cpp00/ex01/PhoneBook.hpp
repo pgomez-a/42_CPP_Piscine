@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/28 16:47:15 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/09/28 17:45:28 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONE_BOOK_H
 # define PHONE_BOOK_H
 
@@ -10,16 +22,15 @@
 class	PhoneBook
 {
 	public:
-		Contact	contact[CONTACT_TOT];
-
 		PhoneBook(void);
 		~PhoneBook(void);
 
 		void	add(void);
-		void	search(void) const;
+		void	search(void);
 
 	private:
-		int	_total;
+		Contact	contact[CONTACT_TOT];
+		int		_total;
 };
 
 #endif
