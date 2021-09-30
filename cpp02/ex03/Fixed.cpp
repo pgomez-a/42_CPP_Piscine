@@ -9,34 +9,29 @@
 
 Fixed::Fixed(void) : _value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed(int const value)
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->_value = value << this->_fbits;
 	return ;
 }
 
 Fixed::Fixed(float const value)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(value * (1 << this->_fbits));
 	return ;
 }
 
 Fixed::Fixed(Fixed const & fixed)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 	return ;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
@@ -47,7 +42,7 @@ Fixed::~Fixed(void)
 Fixed&	Fixed::operator=(Fixed const & fixed)
 {
 	this->_value = fixed.getRawBits();
-	return *this;
+	return (*this);
 }
 
 /**

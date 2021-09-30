@@ -1,23 +1,26 @@
 #ifndef POINT_H
 # define POINT_H
 
-#include "Fixed.hpp"
+# include "Fixed.hpp"
 
 class	Point
 {
 	public:
 		Point(void);
-		Point(Point const & x, Point const & y);
+		Point(Fixed x, Fixed y);
 		Point(Point const & point);
 		~Point(void);
 
-		Point	operator=(Point const & point);
+		const Point&	operator=(Point const & point) const;
 
-		int	getX();
-		int	getY();
+		Fixed		getX(void) const;
+		Fixed		getY(void) const;
+
 	private:
 		Fixed const	x;
 		Fixed const	y;
 };
+
+std::ostream&	operator<<(std::ostream& out, Point const & point);
 
 #endif

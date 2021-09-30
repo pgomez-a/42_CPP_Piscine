@@ -47,7 +47,7 @@ Fixed::~Fixed(void)
 Fixed&	Fixed::operator=(Fixed const & fixed)
 {
 	this->_value = fixed.getRawBits();
-	return *this;
+	return (*this);
 }
 
 /**

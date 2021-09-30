@@ -1,20 +1,22 @@
-#include "Fixed.hpp"
+#include "Point.hpp"
 #include <iostream>
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 int	main( void )
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Point const	A(0, 0);
+	Point const	B(10, 10);
+	Point const	C(13, 1);
+	Point const	D(0, -3);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	std::cout << "A(" << A.getX() << "," << A.getY() << ")" << std::endl;
+	std::cout << "B(" << B.getX() << "," << B.getY() << ")" << std::endl;
+	std::cout << "C(" << C.getX() << "," << C.getY() << ")" << std::endl;
 
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
+	if (bsp(A, B, C, D))
+		std::cout << D << " está dentro del triángulo." << std::endl;
+	else
+		std::cout << D << " no está dentro del triángulo." << std::endl;
+	return (0);
 }

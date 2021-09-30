@@ -44,7 +44,7 @@ Fixed::~Fixed(void)
  ** Overload Assignation Operation ~ Canonical form
  **/
 
-Fixed&	Fixed::operator=(Fixed const & fixed)
+Fixed&		Fixed::operator=(Fixed const & fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->_value = fixed.getRawBits();
@@ -89,7 +89,7 @@ int	Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const
 {
-	return ((double)this->_value / (double)(1 << this->_fbits));
+	return ((float)this->_value / (float)(1 << this->_fbits));
 }
 
 const int	Fixed::_fbits = 8;

@@ -1,11 +1,17 @@
 #include "Point.hpp"
 
+/**
+ ** Default constructor for a Point object ~ Canonical form
+ ** Constructor with a coordinate for the Point object
+ ** Copy constructor ~ Canonical form
+ **/
+
 Point::Point(void) : x(0), y(0)
 {
-	return ; 
+	return ;
 }
 
-Point::Point(Point const & x, Point const & y) : x(x), y(y)
+Point::Point(Fixed x, Fixed y) : x(x), y(y)
 {
 	return ;
 }
@@ -16,24 +22,52 @@ Point::Point(Point const & point)
 	return ;
 }
 
+/**
+ ** Destructor for a Point object
+ **/
+
 Point::~Point(void)
 {
 	return ;
 }
 
-Point	Point::operator=(Point const & point)
+/**
+ ** Overload Assignation Operator ~ Canonical form
+ ** Since x and y are const, it does not change anything
+ **/
+
+const Point&	Point::operator=(Point const & point) const
 {
-	this->x = point.getX();
-	this->y = point.getY();
+	Fixed	*tmp_x;
+	Fixed	*tmp_y;
+
+	tmp_x = (Fixed *) &this->x;
+	tmp_y = (Fixed *) &this->y;
+	*tmp_x = point.getX();
+	*tmp_y = point.getY();
 	return (*this);
 }
 
-int	Point::getX(void)
+/**
+ ** Get the value of x and y coordinates
+ **/
+
+Fixed	Point::getX(void) const
 {
 	return (this->x);
 }
 
-int	Point::getY(void)
+Fixed	Point::getY(void) const
 {
 	return (this->y);
+}
+
+/**
+ ** Output the coordinates of a Point object
+ **/
+
+std::ostream&	operator<<(std::ostream& out, Point const & point)
+{
+	out << "(" << point.getX() << "," << point.getY() << ")";
+	return (out);
 }

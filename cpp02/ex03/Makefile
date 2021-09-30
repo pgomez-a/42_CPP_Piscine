@@ -4,7 +4,8 @@ NAME		= my_first_orthodox
 
 SRCS		= main.cpp	\
 		  Fixed.cpp	\
-		  Point.cpp
+		  Point.cpp	\
+		  bsp.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
