@@ -1,0 +1,72 @@
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include <iostream>
+
+static void	Clap_Attack_Clap(ClapTrap& robotUno, ClapTrap& robotDos)
+{
+	robotUno.attack(robotDos.getName());
+	robotDos.takeDamage(robotUno.getDamage());
+	std::cout << std::endl;
+	return ;
+}
+
+static void	Scav_Attack_Scav(ScavTrap& maquinaUno, ScavTrap& maquinaDos)
+{
+	maquinaUno.attack(maquinaDos.getName());
+	maquinaDos.takeDamage(maquinaUno.getDamage());
+	std::cout << std::endl;
+	return ;
+}
+
+static void	Frag_Attack_Frag(FragTrap& chatarraUno, FragTrap& chatarraDos)
+{
+	chatarraUno.attack(chatarraDos.getName());
+	chatarraDos.takeDamage(chatarraUno.getDamage());
+	std::cout << std::endl;
+	return ;
+}
+
+int	main(void)
+{
+	{
+		std::cout << "------- CLAP TRAP vs CLAP TRAP -------" << std::endl;
+		ClapTrap	robotUno("Wall-E");
+		ClapTrap	robotDos("Basur-O");
+
+		Clap_Attack_Clap(robotUno, robotDos);
+		Clap_Attack_Clap(robotDos, robotUno);
+		robotUno.beRepaired(2);
+		robotUno.beRepaired(7);
+		robotDos.beRepaired(30);
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+	{
+		std::cout << "------- SCAV TRAP vs SCAV TRAP -------" << std::endl;
+		ScavTrap	maquinaUno("Dek-U");
+		ScavTrap	maquinaDos("Todo-RK");
+		
+		Scav_Attack_Scav(maquinaUno, maquinaDos);
+		maquinaDos.beRepaired(5);
+		Scav_Attack_Scav(maquinaDos, maquinaUno);
+		Scav_Attack_Scav(maquinaDos, maquinaUno);
+		maquinaUno.guardGate();
+		maquinaUno.beRepaired(2);
+		Scav_Attack_Scav(maquinaDos, maquinaUno);
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+	{
+		std::cout << "------- FRAG TRAP vs FRAG TRAP -------" << std::endl;
+		FragTrap	chatarraUno("Chat-U");
+		FragTrap	chatarraDos("No-P");
+
+		Frag_Attack_Frag(chatarraUno, chatarraDos);
+		Frag_Attack_Frag(chatarraDos, chatarraUno);
+		chatarraDos.highFivesGuys();
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+	return (0);
+}
