@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/04 20:26:08 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/04 20:27:56 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 /**
@@ -162,7 +174,7 @@ Fixed	Fixed::operator/(Fixed const & fixed) const
 Fixed	Fixed::operator++(void)
 {
 	Fixed	pre_inc;
-	int	value;
+	int		value;
 
 	value = this->_value;
 	value = ++value;
@@ -174,7 +186,7 @@ Fixed	Fixed::operator++(void)
 Fixed	Fixed::operator++(int)
 {
 	Fixed	post_inc;
-	int	value;
+	int		value;
 
 	value = this->_value;
 	post_inc.setRawBits(value);
@@ -186,7 +198,7 @@ Fixed	Fixed::operator++(int)
 Fixed	Fixed::operator--(void)
 {
 	Fixed	pre_dec;
-	int	value;
+	int		value;
 
 	value = this->_value;
 	value = --value;
@@ -198,7 +210,7 @@ Fixed	Fixed::operator--(void)
 Fixed	Fixed::operator--(int)
 {
 	Fixed	post_dec;
-	int	value;
+	int		value;
 
 	value = this->_value;
 	post_dec.setRawBits(value);
