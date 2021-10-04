@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Karen.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/04 16:03:32 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/04 20:01:25 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Karen.hpp"
 
 Karen::Karen(void)
@@ -14,7 +26,7 @@ void	Karen::complain(std::string level)
 {
 	call_func	functions [4];
 	std::string	book[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int		count;
+	int			count;
 
 	functions[0] = &Karen::debug;
 	functions[1] = &Karen::info;
@@ -24,17 +36,24 @@ void	Karen::complain(std::string level)
 	while (count < 4)
 	{
 		if (level == book[count])
-		{
-			while (count < 4)
-			{
-				(this->*functions[count])();
-				count++;
-			}
-			return ;
-		}
+			break;
 		count++;
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	switch(count)
+	{
+		case 0:
+			(this->*functions[0])();
+		case 1:
+			(this->*functions[1])();
+		case 2:
+			(this->*functions[2])();
+		case 3:
+			(this->*functions[3])();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+
+	}
 	return ;
 }
 

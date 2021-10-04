@@ -1,17 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/04 15:36:59 by pgomez-a          #+#    #+#              #
+#    Updated: 2021/10/04 15:37:28 by pgomez-a         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 .PHONY:	all clean fclean re
 
 NAME		= replace
 
 SRCS		= main.cpp	\
-		  Sed.cpp
+			  Sed.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-CXX		= clang++
+CXX			= clang++
 
 CXXFLAGS	= -Wall -Werror -Wextra
 
-RM		= rm -f
+RM			= rm -f
 
 all:		$(NAME)
 
@@ -24,4 +36,4 @@ clean:
 fclean:		clean
 	@ $(RM) $(NAME)
 
-re:		fclean all
+re:			fclean all

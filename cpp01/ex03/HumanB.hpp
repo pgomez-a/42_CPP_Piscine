@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/04 15:30:00 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/04 15:30:45 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HUMANB_H
 # define HUMANB_H
 
@@ -6,7 +18,6 @@
 class	HumanB
 {
 	public:
-		HumanB(std::string name, Weapon& weapon);
 		HumanB(std::string name);
 		~HumanB(void);
 

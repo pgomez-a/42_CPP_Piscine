@@ -1,17 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/04 16:01:27 by pgomez-a          #+#    #+#              #
+#    Updated: 2021/10/04 16:01:41 by pgomez-a         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 .PHONY:	all clean fclean re
 
 NAME		= karenFilter
 
 SRCS		= main.cpp	\
-		  Karen.cpp
+			  Karen.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-CXX		= clang++
+CXX			= clang++
 
 CXXFLAGS	= -Wall -Werror -Wextra
 
-RM		= rm -f
+RM			= rm -f
 
 all:		$(NAME)
 
@@ -24,4 +36,4 @@ clean:
 fclean:		clean
 	@ $(RM) $(NAME)
 
-re:		fclean all
+re:			fclean all
