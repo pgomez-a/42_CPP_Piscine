@@ -14,5 +14,12 @@ int	main(void)
 	attack(robotUno, robotDos);
 	attack(robotDos, robotUno);
 	robotUno.beRepaired(3);
+
+	std::cout << std::endl;
+	ClapTrap	robotTres("Dall-E");
+
+	attack(robotTres, robotUno);
+
+	std::cout << std::endl;
 	return (0);
 }

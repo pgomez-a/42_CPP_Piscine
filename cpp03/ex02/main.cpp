@@ -3,7 +3,7 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-static void	Clap_Attack_Clap(ClapTrap& robotUno, ClapTrap& robotDos)
+static void	Frag_Attack_Scav(FragTrap& robotUno, ScavTrap& robotDos)
 {
 	robotUno.attack(robotDos.getName());
 	robotDos.takeDamage(robotUno.getDamage());
@@ -11,7 +11,7 @@ static void	Clap_Attack_Clap(ClapTrap& robotUno, ClapTrap& robotDos)
 	return ;
 }
 
-static void	Scav_Attack_Scav(ScavTrap& maquinaUno, ScavTrap& maquinaDos)
+static void	Scav_Attack_Frag(ScavTrap& maquinaUno, FragTrap& maquinaDos)
 {
 	maquinaUno.attack(maquinaDos.getName());
 	maquinaDos.takeDamage(maquinaUno.getDamage());
@@ -29,32 +29,6 @@ static void	Frag_Attack_Frag(FragTrap& chatarraUno, FragTrap& chatarraDos)
 
 int	main(void)
 {
-	{
-		std::cout << "------- CLAP TRAP vs CLAP TRAP -------" << std::endl;
-		ClapTrap	robotUno("Wall-E");
-		ClapTrap	robotDos("Basur-O");
-
-		Clap_Attack_Clap(robotUno, robotDos);
-		Clap_Attack_Clap(robotDos, robotUno);
-		robotUno.beRepaired(2);
-		robotUno.beRepaired(7);
-		robotDos.beRepaired(30);
-	}
-	std::cout << std::endl;
-	std::cout << std::endl;
-	{
-		std::cout << "------- SCAV TRAP vs SCAV TRAP -------" << std::endl;
-		ScavTrap	maquinaUno("Dek-U");
-		ScavTrap	maquinaDos("Todo-RK");
-		
-		Scav_Attack_Scav(maquinaUno, maquinaDos);
-		maquinaDos.beRepaired(5);
-		Scav_Attack_Scav(maquinaDos, maquinaUno);
-		Scav_Attack_Scav(maquinaDos, maquinaUno);
-		maquinaUno.guardGate();
-		maquinaUno.beRepaired(2);
-		Scav_Attack_Scav(maquinaDos, maquinaUno);
-	}
 	std::cout << std::endl;
 	std::cout << std::endl;
 	{
@@ -65,6 +39,19 @@ int	main(void)
 		Frag_Attack_Frag(chatarraUno, chatarraDos);
 		Frag_Attack_Frag(chatarraDos, chatarraUno);
 		chatarraDos.highFivesGuys();
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
+	{
+		std::cout << "------- SCAV TRAP vs FRAG TRAP -------" << std::endl;
+		FragTrap	chatarraUno("Dad-O");
+		ScavTrap	maquinaUno("Dona-LD");
+
+		Frag_Attack_Scav(chatarraUno, maquinaUno);
+		Frag_Attack_Scav(chatarraUno, maquinaUno);
+		maquinaUno.beRepaired(30);
+		Scav_Attack_Frag(maquinaUno, chatarraUno);
+		chatarraUno.highFivesGuys();
 	}
 	std::cout << std::endl;
 	std::cout << std::endl;

@@ -6,9 +6,10 @@
  ** Copy constructor ~ Canonical Form
  **/
 
-FragTrap::FragTrap(void)
+FragTrap::FragTrap(void) : ClapTrap("Default")
 {
 	std::cout << "Default FragTrap has come to life! $)" << std::endl;
+	this->_name = "Default";
 	this->_max_hp = 100;
 	this->_max_ep = 100;
 	this->_hitpoints = this->_max_hp;
@@ -17,10 +18,9 @@ FragTrap::FragTrap(void)
 	return ;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << name << " FragTrap has come to life! $)" << std::endl;
-	this->_name = name;
 	this->_max_hp = 100;
 	this->_max_ep = 100;
 	this->_hitpoints = this->_max_hp;
@@ -63,6 +63,25 @@ FragTrap&	FragTrap::operator=(FragTrap const & fragtrap)
 }
 
 /**
+ ** FragTrap attack reducing the hitpoints of its oponent
+ **/
+
+void		FragTrap::attack(std::string const & target)
+{
+	if (this->_hitpoints > 0)
+	{
+		std::cout << this->_name << " FragTrap attack " << target
+			<< ", causing " << this->_attack_damage << " damage points!" << std::endl;
+	}
+	else
+	{
+		std::cout << this->_name << " FragTrap is not conscious! "
+			<< this->_name << " FragTrap must sleep before attacking..." << std::endl;
+	}
+	return ;
+}
+
+/**
  ** Display a positive high fives request on stdout
  **/
 
@@ -70,7 +89,10 @@ void		FragTrap::highFivesGuys(void)
 {
 	if (this->_energy_points > 0)
 	{
-		this->_energy_points -= 2;
+		if ((int)this->_energy_points - 2 < 0)
+			this->_energy_points = 0;
+		else
+			this->_energy_points -= 2;
 		std::cout << "Hey Hello!! Want to high five? :))" << std::endl;
 	}
 	else

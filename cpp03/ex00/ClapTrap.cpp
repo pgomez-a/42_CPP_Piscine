@@ -7,7 +7,7 @@
  ** Default constructor
  **/
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _name("Default")
 {
 	std::cout << "Default ClapTrap has entered the game :)" << std::endl;
 	this->_max_hp = 10;
@@ -81,9 +81,10 @@ void		ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hitpoints > 0)
 	{
-		this->_hitpoints -= amount;
-		if (this->_hitpoints < 0)
+		if ((int)this->_hitpoints - (int)amount < 0)
 			this->_hitpoints = 0;
+		else
+			this->_hitpoints -= amount;
 		std::cout << this->_name << " ClapTrap has been damaged. Now it has "
 			<< this->_hitpoints << " health points!" << std::endl;
 	}

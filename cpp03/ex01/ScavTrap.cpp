@@ -6,7 +6,7 @@
  ** Copy Constructor ~ Canonical Form
  **/
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap("Default")
 {
 	std::cout << "Default ScavTrap has evolved from ClapTrap :)" << std::endl;
 	this->_max_hp = 100;
@@ -17,10 +17,9 @@ ScavTrap::ScavTrap(void)
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << name << " ScavTrap has evolved from ClapTrap :)" << std::endl;
-	this->_name = name;
 	this->_max_hp = 100;
 	this->_max_ep = 50;
 	this->_hitpoints = this->_max_hp;
@@ -82,9 +81,12 @@ void		ScavTrap::guardGate(void)
 {
 	if (this->_energy_points > 0)
 	{
-		this->_energy_points -= 10;
+		if ((int)this->_energy_points - 10 < 0)
+			this->_energy_points = 0;
+		else
+			this->_energy_points -= 10;
 		std::cout << this->_name << " ScavTrap has entered in Gatekeeper mode! "
-			<< this->_name << " ScavTrap has consume 5 energy points! XD" << std::endl;
+			<< this->_name << " ScavTrap has consume 10 energy points! XD" << std::endl;
 	}
 	else
 	{
