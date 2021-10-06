@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/06 16:51:34 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/06 16:52:10 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_H
 # define FIXED_H
 
@@ -37,14 +49,15 @@ class	Fixed
 		Fixed	operator--(void);
 		Fixed	operator--(int);
 
-		int	getRawBits(void) const;
+		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-		int	toInt(void) const;
+		int		toInt(void) const;
 		float	toFloat(void) const;
+
 	private:
 		static const int	_fbits;
 
-		int			_value;
+		int					_value;
 };
 
 std::ostream&	operator<<(std::ostream& out, Fixed const & fixed);
