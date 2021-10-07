@@ -4,6 +4,7 @@ static void	attack(ClapTrap& robotUno, ClapTrap& robotDos)
 {
 	robotUno.attack(robotDos.getName());
 	robotDos.takeDamage(robotUno.getDamage());
+	std::cout << std::endl;
 }
 
 int	main(void)

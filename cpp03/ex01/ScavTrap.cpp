@@ -77,6 +77,10 @@ void		ScavTrap::attack(std::string const & target)
 	return ;
 }
 
+/**
+ ** Special move for ScavTrap object - It consumes 10 energy points
+ **/
+
 void		ScavTrap::guardGate(void)
 {
 	if (this->_energy_points > 0)
