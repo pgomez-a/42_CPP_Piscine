@@ -6,6 +6,7 @@
 int	main(void)
 {
 	DiamondTrap	diamondOne("Dall-E");
+
 	std::cout << std::endl;
 	diamondOne.attack("Wall-0");
 

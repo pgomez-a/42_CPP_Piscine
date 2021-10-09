@@ -63,25 +63,6 @@ FragTrap&	FragTrap::operator=(FragTrap const & fragtrap)
 }
 
 /**
- ** FragTrap attack reducing the hitpoints of its oponent
- **/
-
-void		FragTrap::attack(std::string const & target)
-{
-	if (this->_hitpoints > 0)
-	{
-		std::cout << this->_name << " FragTrap attack " << target
-			<< ", causing " << this->_attack_damage << " damage points!" << std::endl;
-	}
-	else
-	{
-		std::cout << this->_name << " FragTrap is not conscious! "
-			<< this->_name << " FragTrap must sleep before attacking..." << std::endl;
-	}
-	return ;
-}
-
-/**
  ** Display a positive high fives request on stdout
  **/
 
