@@ -58,7 +58,7 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & claptrap)
  ** Attack the specified target
  **/
 
-void		ClapTrap::attack(std::string const & target)
+void		ClapTrap::attack(std::string const & target) const
 {
 	if (this->_hitpoints > 0)
 	{

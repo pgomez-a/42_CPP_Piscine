@@ -62,7 +62,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & scavtrap)
  ** ScavTrap attack reducing the hitpoints of its oponents
  **/
 
-void		ScavTrap::attack(std::string const & target)
+void		ScavTrap::attack(std::string const & target) const
 {
 	if (this->_hitpoints > 0)
 	{

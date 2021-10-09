@@ -13,7 +13,7 @@ class	ClapTrap
 
 		ClapTrap&	operator=(ClapTrap const & claptrap);
 
-		virtual void	attack(std::string const & target);
+		virtual void	attack(std::string const & target) const;
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 

@@ -62,7 +62,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & scavtrap)
  ** ScavTrap attack reducing the hitpoints of its oponents
  **/
 
-void		ScavTrap::attack(std::string const & target)
+void		ScavTrap::attack(std::string const & target) const
 {
 	if (this->_hitpoints > 0)
 	{
@@ -81,7 +81,10 @@ void		ScavTrap::guardGate(void)
 {
 	if (this->_energy_points > 0)
 	{
-		this->_energy_points -= 10;
+		if ((int)this->_energy_points - 10 < 0)
+			this->_energy_points = 0;
+		else
+			this->_energy_points -= 10;
 		std::cout << this->_name << " ScavTrap has entered in Gatekeeper mode! "
 			<< this->_name << " ScavTrap has consume 5 energy points! XD" << std::endl;
 	}
