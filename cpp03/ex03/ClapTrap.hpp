@@ -17,12 +17,12 @@ class	ClapTrap
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 
-		std::string	getName(void) const;
-		unsigned int	getMaxHP(void) const;
-		unsigned int	getMaxEP(void) const;
-		unsigned int	getHitPoints(void) const;
-		unsigned int	getEnergy(void) const;
-		unsigned int	getDamage(void) const;
+		virtual std::string	getName(void) const;
+		unsigned int		getMaxHP(void) const;
+		unsigned int		getMaxEP(void) const;
+		unsigned int		getHitPoints(void) const;
+		unsigned int		getEnergy(void) const;
+		unsigned int		getDamage(void) const;
 
 	protected:
 		std::string	_name;

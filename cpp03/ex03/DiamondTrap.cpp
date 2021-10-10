@@ -1,5 +1,11 @@
 #include "DiamondTrap.hpp"
 
+/**
+ ** Default Constructor ~ Canonical Form
+ ** Name constructor ~ Diamond is initialized with a name
+ ** Copy Constructor ~ Canonical Form
+ **/
+
 DiamondTrap::DiamondTrap(void) : ClapTrap("Default_clap_name")
 {
 	FragTrap	fragtrap("temp");
@@ -36,6 +42,10 @@ DiamondTrap::DiamondTrap(DiamondTrap const & diamondtrap)
 	return ;
 }
 
+/**
+ ** Destructor for DiamondTrap object ~ Canonical Form
+ **/
+
 DiamondTrap::~DiamondTrap(void)
 {
 	std::cout << "Mysteriously, " << this->_name
@@ -43,17 +53,29 @@ DiamondTrap::~DiamondTrap(void)
 	return ;
 }
 
+/**
+ ** Overload Assignation Operator ~ Canonical Form
+ **/
+
 DiamondTrap&	DiamondTrap::operator=(DiamondTrap const & diamondtrap)
 {
 	this->_name = diamondtrap.FragTrap::getName();
 	return (*this);
 }
 
+/**
+ ** DiamondTrap attacks using ScavTrap attack function
+ **/
+
 void		DiamondTrap::attack(std::string const & target) const
 {
 	this->ScavTrap::attack(target);
 	return ;
 }
+
+/**
+ ** DiamondTrap tell its name and its ClapTrap name
+ **/
 
 void		DiamondTrap::whoAmI(void) const
 {
@@ -62,6 +84,10 @@ void		DiamondTrap::whoAmI(void) const
 		<< " ClapTrap... I don't like it! :(" << std::endl;
 	return ;
 }
+
+/**
+ ** Get name of DiamondTrap, and not ClapTrap name
+ **/
 
 std::string	DiamondTrap::getName(void) const
 {

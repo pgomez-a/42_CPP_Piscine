@@ -5,6 +5,7 @@
 
 static void	Frag_Attack_Scav(FragTrap& robotUno, ScavTrap& robotDos)
 {
+	std::cout << std::endl;
 	robotUno.attack(robotDos.getName());
 	robotDos.takeDamage(robotUno.getDamage());
 	std::cout << std::endl;
@@ -13,6 +14,7 @@ static void	Frag_Attack_Scav(FragTrap& robotUno, ScavTrap& robotDos)
 
 static void	Scav_Attack_Frag(ScavTrap& maquinaUno, FragTrap& maquinaDos)
 {
+	std::cout << std::endl;
 	maquinaUno.attack(maquinaDos.getName());
 	maquinaDos.takeDamage(maquinaUno.getDamage());
 	std::cout << std::endl;
@@ -21,6 +23,7 @@ static void	Scav_Attack_Frag(ScavTrap& maquinaUno, FragTrap& maquinaDos)
 
 static void	Frag_Attack_Frag(FragTrap& chatarraUno, FragTrap& chatarraDos)
 {
+	std::cout << std::endl;
 	chatarraUno.attack(chatarraDos.getName());
 	chatarraDos.takeDamage(chatarraUno.getDamage());
 	std::cout << std::endl;
@@ -29,8 +32,6 @@ static void	Frag_Attack_Frag(FragTrap& chatarraUno, FragTrap& chatarraDos)
 
 int	main(void)
 {
-	std::cout << std::endl;
-	std::cout << std::endl;
 	{
 		std::cout << "------- FRAG TRAP vs FRAG TRAP -------" << std::endl;
 		FragTrap	chatarraUno("Chat-U");
@@ -52,8 +53,10 @@ int	main(void)
 		maquinaUno.beRepaired(30);
 		Scav_Attack_Frag(maquinaUno, chatarraUno);
 		chatarraUno.highFivesGuys();
+		chatarraUno.highFivesGuys();
+		chatarraUno.highFivesGuys();
+		chatarraUno.highFivesGuys();
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
-	std::cout << std::endl;
 	return (0);
 }

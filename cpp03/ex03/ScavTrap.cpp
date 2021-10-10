@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
 /**
- ** Default constructor ~ Canonical Form
+ ** Default Constructor ~ Canonical Form
  ** Name constructor ~ ScavTrap is initialized with a name
  ** Copy Constructor ~ Canonical Form
  **/
@@ -76,6 +76,10 @@ void		ScavTrap::attack(std::string const & target) const
 	}
 	return ;
 }
+
+/**
+ ** Special function for ScavTrap that consume some energy points
+ **/
 
 void		ScavTrap::guardGate(void)
 {

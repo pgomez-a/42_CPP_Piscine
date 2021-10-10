@@ -5,8 +5,10 @@
 
 void	diamond_attack_diamond(DiamondTrap& diamondOne, DiamondTrap& diamondTwo)
 {
+	std::cout << std::endl;
 	diamondOne.attack(diamondTwo.getName());
 	diamondTwo.takeDamage(diamondOne.getDamage());
+	std::cout << std::endl;
 }
 
 int	main(void)

@@ -4,6 +4,7 @@
 
 static void	Scav_Attack_Scav(ScavTrap& maquinaUno, ScavTrap& maquinaDos)
 {
+	std::cout << std::endl;
 	maquinaUno.attack(maquinaDos.getName());
 	maquinaDos.takeDamage(maquinaUno.getDamage());
 	std::cout << std::endl;
@@ -12,6 +13,7 @@ static void	Scav_Attack_Scav(ScavTrap& maquinaUno, ScavTrap& maquinaDos)
 
 static void	Scav_Attack_Clap(ScavTrap& maquinaUno, ClapTrap& robotUno)
 {
+	std::cout << std::endl;
 	maquinaUno.attack(robotUno.getName());
 	robotUno.takeDamage(maquinaUno.getDamage());
 	std::cout << std::endl;
@@ -19,6 +21,7 @@ static void	Scav_Attack_Clap(ScavTrap& maquinaUno, ClapTrap& robotUno)
 
 static void	Clap_Attack_Scav(ClapTrap& robotUno, ScavTrap& maquinaUno)
 {
+	std::cout << std::endl;
 	robotUno.attack(maquinaUno.getName());
 	maquinaUno.takeDamage(robotUno.getDamage());
 	std::cout << std::endl;

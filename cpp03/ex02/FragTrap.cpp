@@ -66,17 +66,8 @@ FragTrap&	FragTrap::operator=(FragTrap const & fragtrap)
  ** Display a positive high fives request on stdout
  **/
 
-void		FragTrap::highFivesGuys(void)
+void		FragTrap::highFivesGuys(void) const
 {
-	if (this->_energy_points > 0)
-	{
-		if ((int)this->_energy_points - 2 < 0)
-			this->_energy_points = 0;
-		else
-			this->_energy_points -= 2;
-		std::cout << "Hey Hello!! Want to high five? :))" << std::endl;
-	}
-	else
-		std::cout << this->_name << " FragTrap is recovering energy..." << std::endl;
+	std::cout << "Hey Hello!! Want to high five? :))" << std::endl;
 	return ;
 }
