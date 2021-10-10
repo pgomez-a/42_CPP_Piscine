@@ -7,7 +7,7 @@ provide you with a learning path during the development of your project, but at 
 **If you want to learn more about IT topics, visit my website:** [**IA Notes**](https://ia-notes.com/)
 
 ## CPP00
-- [What is C++?]()
+- [What is C++?](https://github.com/pgomez-a/42_CPP_Piscine/blob/master/cpp00/README.md)
 - [What is Object Oriented Programming?]()
 - [What is encapsulation?]()
 - [What is abstraction?]()
