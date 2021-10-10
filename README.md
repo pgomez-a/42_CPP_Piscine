@@ -5,3 +5,35 @@ that these notes are just a little information about everything that you will ha
 provide you with a learning path during the development of your project, but at no point do I present it as the only source of information to be consulted. :)<br>
 
 **If you want to learn more about IT topics, visit my website:** [**IA Notes**](https://ia-notes.com/)
+
+## CPP00
+- [What is C++?]()
+- [What is Object Oriented Programming?]()
+- [What is encapsulation?]()
+- [What is abstraction?]()
+- [What is inheritance?]()
+- [What is polymorphism?]()
+- [What are namespaces?]()
+- [Constructor and Destructor]()
+- [this pointer]()
+- [Const functions]()
+- [No member functions]()
+- [String special methods]()
+
+### CPP01
+- [new & delete]()
+- [What are references]()
+- [Filestreams]()
+- [Message Logs]()
+
+### CPP02
+- [Polymorphism]()
+- [Operator Overloading]()
+- [Canonical Form]()
+- [Fixed Point Numbers]()
+
+### CPP03
+- [Virtual Keyword]()
+- [Inheritance]()
+- [Access control]()
+- [Diamond Problem]()
