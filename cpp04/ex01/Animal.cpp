@@ -40,22 +40,13 @@ Animal::~Animal(void)
 /**
  ** Assignation Operator Overload
  **/
+
 Animal&	Animal::operator=(Animal const & animal)
 {
 	this->_type = animal.getType();
+	if (animal.getType() == "Dog" || animal.getType() == "Cat")
+		*(this->getBrain()) = *(animal.getBrain());
 	return (*this);
-}
-
-/**
- ** Clone the Brain of an Animal in case it is a Dog or a Cat
- **/
-
-Animal*	Animal::clone(Animal const * animal)
-{
-	this->_type = animal->getType();
-	if (animal->getType() == "Dog" || animal->getType() == "Cat")
-		*(this->getBrain()) = *(animal->getBrain());
-	return (this);
 }
 
 /**

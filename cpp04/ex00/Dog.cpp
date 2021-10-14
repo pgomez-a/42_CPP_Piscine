@@ -24,8 +24,7 @@ Dog::Dog(Dog const & dog)
 
 Dog::~Dog(void)
 {
-	std::cout << "Ups, " << this->_type
-		<< " is not happy with us... :(" << std::endl;
+	std::cout << "Ups, Dog is not happy with us... :(" << std::endl;
 	return ;
 }
 
@@ -45,7 +44,6 @@ Dog&	Dog::operator=(Dog const & dog)
 
 void	Dog::makeSound(void) const
 {
-	std::cout << this->_type
-		<< " wants to say WOOF WOFF WOOF!!" << std::endl;
+	std::cout << "Dog wants to say WOOF WOFF WOOF!!" << std::endl;
 	return ;
 }
