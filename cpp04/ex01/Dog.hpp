@@ -10,6 +10,7 @@ class	Dog : public Animal
 	public:
 		Dog(void);
 		Dog(Dog const & dog);
+		Dog(Animal const & dog);
 		~Dog(void);
 
 		Dog&	operator=(Dog const & dog);

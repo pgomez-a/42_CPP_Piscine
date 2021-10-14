@@ -20,6 +20,16 @@ Dog::Dog(Dog const & dog)
 	return ;
 }
 
+Dog::Dog(Animal const & animal)
+{
+	std::cout << "AMAZING! Dog is trying to COPY an ANIMAL" << std::endl;
+	this->_type = "Dog";
+	this->_brain = new Brain();
+	if (animal.getType() == "Dog")
+		*(this->_brain) = *(animal.getBrain());
+	return ;
+}
+
 /**
  ** Default Destructor
  **/
@@ -39,7 +49,8 @@ Dog&	Dog::operator=(Dog const & dog)
 {
 	std::cout << "Dog DEEP Copy has STARTED" << std::endl;
 	this->_type = dog.getType();
-	*(this->_brain) = *(dog.getBrain());
+	if (dog.getType() == "Dog")
+		*(this->_brain) = *(dog.getBrain());
 	std::cout << "Dog DEEP Copy has ENDED" << std::endl;
 	return (*this);
 }

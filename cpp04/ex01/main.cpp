@@ -8,15 +8,8 @@ int	main(void)
 {
 	const Animal*	j = new Dog();
 	const Animal*	i = new Cat();
-	Animal*		animal[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
-	int	count;
-
-	std::cout << std::endl << std::endl;
-
-	*animal[0] = *j;
-	*animal[1] = *j;
-	*animal[2] = *i;
-	*animal[3] = *i;
+	const Animal*	animal[4] = {new Dog(*j), new Dog(*j), new Cat(*i), new Cat(*i)};
+	int		count;
 
 	std::cout << std::endl << std::endl;
 

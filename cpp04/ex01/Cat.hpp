@@ -10,6 +10,7 @@ class	Cat : public Animal
 	public:
 		Cat(void);
 		Cat(Cat const & cat);
+		Cat(Animal const & animal);
 		~Cat(void);
 
 		Cat&	operator=(Cat const & cat);
