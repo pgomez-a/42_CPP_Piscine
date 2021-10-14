@@ -15,6 +15,7 @@ Cat::Cat(void) : Animal("Cat")
 Cat::Cat(Cat const & cat)
 {
 	std::cout << "BRILLIANT! Copy Cat has been made!!" << std::endl;
+	this->_brain = new Brain();
 	*this = cat;
 	return ;
 }
@@ -25,8 +26,7 @@ Cat::Cat(Cat const & cat)
 
 Cat::~Cat(void)
 {
-	std::cout << "Mmmm... " << this->_type
-		<< " thinks taht is better than us" << std::endl;
+	std::cout << "Mmmm... Cat thinks that is better than us" << std::endl;
 	delete this->_brain;
 	return ;
 }
@@ -37,13 +37,10 @@ Cat::~Cat(void)
 
 Cat&	Cat::operator=(Cat const & cat)
 {
-	std::cout << "Start of CAT DEEP COPY" << std::endl;
+	std::cout << "Cat DEEP Copy has STARTED" << std::endl;
 	this->_type = cat.getType();
-	this->_brain = new Brain();
 	*(this->_brain) = *(cat.getBrain());
-	std::cout << "this->_brain --> " << this->_brain << std::endl;
-	std::cout << "cat.getBrain()) --> " << cat.getBrain() << std::endl;
-	std::cout << "End of CAT DEEP COPY" << std::endl;
+	std::cout << "Cat DEEP Copy has ENDED" << std::endl;
 	return (*this);
 }
 
@@ -53,13 +50,12 @@ Cat&	Cat::operator=(Cat const & cat)
 
 void	Cat::makeSound(void) const
 {
-	std::cout << this->_type
-		<< " can't stop t... MIAU MIAU MIAU" << std::endl;
+	std::cout << " Cat can't stop t... MIAU MIAU MIAU" << std::endl;
 	return ;
 }
 
 /**
- ** Get the brain of a Cat object ~ Uuuu... scary... !
+ ** Get the Brain of a Cat object
  **/
 
 Brain*	Cat::getBrain(void) const

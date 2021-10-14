@@ -20,7 +20,7 @@ Animal::Animal(std::string type) : _type(type)
 
 Animal::Animal(Animal const & animal)
 {
-	std::cout << "Heyy!! " << this->_type << " Animal is in two places!!!"
+	std::cout << "Heyy!! " << animal.getType() << " Animal is in two places!!!"
 		<< " What kind of universe is this?" << std::endl;
 	*this = animal;
 	return ;
@@ -44,6 +44,18 @@ Animal&	Animal::operator=(Animal const & animal)
 {
 	this->_type = animal.getType();
 	return (*this);
+}
+
+/**
+ ** Clone the Brain of an Animal in case it is a Dog or a Cat
+ **/
+
+Animal*	Animal::clone(Animal const * animal)
+{
+	this->_type = animal->getType();
+	if (animal->getType() == "Dog" || animal->getType() == "Cat")
+		*(this->getBrain()) = *(animal->getBrain());
+	return (this);
 }
 
 /**

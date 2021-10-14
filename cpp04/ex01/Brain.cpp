@@ -7,13 +7,16 @@
 
 Brain::Brain(void)
 {
-	std::cout << "Brain Constructor has been called :)" << std::endl;
+	std::cout << "Brain has been created :)" << std::endl;
+	this->_ideas = new std::string[100];
+	this->_pos = -1;
 	return ;
 }
 
 Brain::Brain(Brain const & brain)
 {
-	std::cout << "Brain Copy Constructor has been called :)" << std::endl;
+	std::cout << "Copy Brain has been duplicated :|" << std::endl;
+	this->_ideas = new std::string[100];
 	*this = brain;
 	return ;
 }
@@ -24,32 +27,50 @@ Brain::Brain(Brain const & brain)
 
 Brain::~Brain(void)
 {
-	std::cout << "Brain Destructor has been called :(" << std::endl;
+	std::cout << "Brain has been deleted :(" << std::endl;
+	delete [] this->_ideas;
 	return ;
 }
 
 /**
- ** Assignation Operator Overload
+ ** Assignation Opeartor Overload
  **/
 
 Brain&	Brain::operator=(Brain const & brain)
 {
-	int	count;
-
-	count = 0;
-	while (count < 100)
-	{
-		this->_ideas[count] = brain.getIdeas(count);
-		count++;
-	}
+	std::cout << "Brain DEEP Copy has STARTED" << std::endl;
+	this->_pos = brain.getPos();
+	*(this->_ideas) = *(brain.getIdeas());
+	std::cout << "Brain DEEP Copy has ENDED" << std::endl;
 	return (*this);
 }
 
 /**
- ** Get ideas of Brain object
+ ** Return the last idea of Brain
  **/
 
-std::string	Brain::getIdeas(int pos) const
+int		Brain::getPos(void) const
 {
-	return (this->_ideas[pos]);
+	return (this->_pos);
+}
+
+/**
+ ** Return a pointer with the ideas of a Brain
+ **/
+
+std::string*	Brain::getIdeas(void) const
+{
+	return (this->_ideas);
+}
+
+/**
+ ** Set ideas for a Brain object
+ **/
+
+void		Brain::setIdeas(std::string ideas)
+{
+	this->_pos += 1;
+	if (this->_pos < 100)
+		this->_ideas[this->_pos] = ideas;
+	return ;
 }

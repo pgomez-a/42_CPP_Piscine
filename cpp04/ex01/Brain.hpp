@@ -12,10 +12,13 @@ class	Brain
 
 		Brain&	operator=(Brain const & brain);
 
-		std::string	getIdeas(int pos) const;
+		int		getPos(void) const;
+		std::string*	getIdeas(void) const;
+		void		setIdeas(std::string ideas);
 
 	private:
-		std::string	_ideas[100];
+		std::string*	_ideas;
+		int		_pos;
 };
 
 #endif

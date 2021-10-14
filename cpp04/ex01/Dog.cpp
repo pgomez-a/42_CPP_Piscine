@@ -15,6 +15,7 @@ Dog::Dog(void) : Animal("Dog")
 Dog::Dog(Dog const & dog)
 {
 	std::cout << "AMAZING! The copied animal is a DOG!! 8)" << std::endl;
+	this->_brain = new Brain();
 	*this = dog;
 	return ;
 }
@@ -25,8 +26,7 @@ Dog::Dog(Dog const & dog)
 
 Dog::~Dog(void)
 {
-	std::cout << "Ups, " << this->_type
-		<< " is not happy with us... :(" << std::endl;
+	std::cout << "Ups, Dog is not happy with us... :(" << std::endl;
 	delete this->_brain;
 	return ;
 }
@@ -37,13 +37,10 @@ Dog::~Dog(void)
 
 Dog&	Dog::operator=(Dog const & dog)
 {
-	std::cout << "Start of DOG DEEP COPY" << std::endl;
+	std::cout << "Dog DEEP Copy has STARTED" << std::endl;
 	this->_type = dog.getType();
-	this->_brain = new Brain();
 	*(this->_brain) = *(dog.getBrain());
-	std::cout << "this->_brain --> " << this->_brain << std::endl;
-	std::cout << "this->_brain --> " << dog.getBrain() << std::endl;
-	std::cout << "End of DOG DEEP COPY" << std::endl;
+	std::cout << "Dog DEEP Copy has ENDED" << std::endl;
 	return (*this);
 }
 
@@ -53,13 +50,12 @@ Dog&	Dog::operator=(Dog const & dog)
 
 void	Dog::makeSound(void) const
 {
-	std::cout << this->_type
-		<< " wants to say WOOF WOFF WOOF!!" << std::endl;
+	std::cout << " Dog wants to say WOOF WOFF WOOF!!" << std::endl;
 	return ;
 }
 
 /**
- ** Get the brain of a Dog object ~ Uuuu... scary...!
+ ** Get the Brain of a Dog object
  **/
 
 Brain*	Dog::getBrain(void) const
