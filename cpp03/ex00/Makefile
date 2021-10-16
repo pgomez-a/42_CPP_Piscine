@@ -1,4 +1,4 @@
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re run
 
 NAME		= Aaaaand...
 
@@ -25,3 +25,7 @@ fclean:		clean
 	@ $(RM) $(NAME)
 
 re:		fclean all
+
+run:		all
+	@ clear
+	@ ./$(NAME)

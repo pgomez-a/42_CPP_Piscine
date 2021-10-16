@@ -30,14 +30,16 @@ ClapTrap::ClapTrap(std::string name) : _name(name)
 
 ClapTrap::ClapTrap(ClapTrap const & claptrap)
 {
+	std::cout << "Replica of " << this->_name
+		<< " ClapTrap has been created :O" << std::endl;
 	*this = claptrap;
-	std::cout << "Replica of " << this->_name << " ClapTrap has been created :O" << std::endl;
 	return ;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << this->_name << " ClapTrap has decided to leave the game :(" << std::endl;
+	std::cout << this->_name
+		<< " ClapTrap has decided to leave the game :(" << std::endl;
 	return ;
 }
 
@@ -51,6 +53,8 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & claptrap)
 	this->_hitpoints = claptrap.getHitPoints();
 	this->_energy_points = claptrap.getEnergy();
 	this->_attack_damage = claptrap.getDamage();
+	this->_max_hp = claptrap.getMaxHP();
+	this->_max_ep = claptrap.getMaxEP();
 	return (*this);
 }
 
@@ -132,4 +136,14 @@ unsigned int	ClapTrap::getEnergy(void) const
 unsigned int	ClapTrap::getDamage(void) const
 {
 	return (this->_attack_damage);
+}
+
+unsigned int	ClapTrap::getMaxHP(void) const
+{
+	return (this->_max_hp);
+}
+
+unsigned int	ClapTrap::getMaxEP(void) const
+{
+	return (this->_max_ep);
 }

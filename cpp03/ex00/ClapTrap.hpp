@@ -1,5 +1,5 @@
-#ifndef CLAPTRAP_H
-# define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 
@@ -21,6 +21,8 @@ class	ClapTrap
 		unsigned int	getHitPoints(void) const;
 		unsigned int	getEnergy(void) const;
 		unsigned int	getDamage(void) const;
+		unsigned int	getMaxHP(void) const;
+		unsigned int	getMaxEP(void) const;
 
 	private:
 		std::string	_name;
