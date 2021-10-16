@@ -2,6 +2,7 @@
 # define CHARACTER_HPP
 
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 # include <iostream>
 
 class	Character : public ICharacter

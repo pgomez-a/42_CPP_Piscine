@@ -1,5 +1,8 @@
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
 
@@ -12,43 +15,36 @@ void	search_leaks(void)
 int	main(void)
 {
 	atexit(search_leaks);
-	std::cout << std::endl;
 
-	Character	pablo("Pablo");
-	Character	carla("Carla");
-	AMateria*	cura = new Cure();
-	AMateria*	hielo = new Ice();
-	std::cout << std::endl;
-
-	std::cout << std::endl;
-
-	pablo.equip(cura);
-	pablo.equip(cura);
-	pablo.equip(cura);
-	pablo.equip(cura);
-	pablo.equip(cura);
-	pablo.equip(hielo);
-	carla.equip(hielo);
-	std::cout << std::endl;
-	pablo.use(0, pablo);
-	pablo.use(1, pablo);
-	pablo.use(2, pablo);
-	pablo.use(3, pablo);
-	pablo.use(4, pablo);
-	carla.use(0, carla);
-
-	std::cout << std::endl;
-	pablo = carla;
-	std::cout << std::endl;
-	pablo.use(0, pablo);
-	pablo.use(1, pablo);
-	pablo.use(2, pablo);
-	carla.use(0, carla);
-	carla.use(1, carla);
-
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
 	std::cout << std::endl << std::endl;
-	delete cura;
-	delete hielo;
+
+	ICharacter* me = new Character("me");
+
+	std::cout << std::endl << std::endl;
+
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	std::cout << std::endl << std::endl;
+	ICharacter* bob = new Character("bob");
+
+	std::cout << std::endl << std::endl;
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	std::cout << std::endl << std::endl;
+	delete bob;
+	delete me;
+	delete src;
+
+	std::cout << std::endl << std::endl;
 	return (0);
 }

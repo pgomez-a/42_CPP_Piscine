@@ -13,9 +13,9 @@ Character::Character(void)
 }
 
 /**
- ** Constructor that receives a name
- ** Copy Constructor
- **/
+** Constructor that receives a name
+** Copy Constructor
+**/
 
 Character::Character(std::string const & name)
 {
@@ -35,8 +35,8 @@ Character::Character(Character const & character)
 }
 
 /**
- ** Default Destructor
- **/
+** Default Destructor
+**/
 
 Character::~Character(void)
 {
@@ -44,13 +44,14 @@ Character::~Character(void)
 	while (this->idx > 0)
 	{
 		delete this->materia[this->idx - 1];
+		this->materia[this->idx - 1] = NULL;
 		this->idx -= 1;
 	}
 	return ;
 }
 
 /**
- ** Assignation Operator Overlaod
+ ** Assignation Operator Overload
  **/
 
 Character&	Character::operator=(Character const & character)
@@ -59,6 +60,7 @@ Character&	Character::operator=(Character const & character)
 	while (this->idx > 0)
 	{
 		delete this->materia[this->idx - 1];
+		this->materia[this->idx - 1] = NULL;
 		this->idx -= 1;
 	}
 	if (character.idx >= 1)
@@ -67,7 +69,7 @@ Character&	Character::operator=(Character const & character)
 		{
 			this->idx += 1;
 			this->materia[this->idx - 1]
-				= character.materia[character.idx - 1]->clone();
+				= character.materia[this->idx - 1]->clone();
 		}
 	}
 	return (*this);
@@ -91,7 +93,8 @@ void			Character::equip(AMateria* m)
 	if (m && this->idx < 4)
 	{
 		this->idx += 1;
-		this->materia[this->idx - 1] = m->clone();
+		this->materia[this->idx - 1] = m;
+		std::cout << "Success. Materia has been equiped" << std::endl;
 	}
 	else if (!m)
 		std::cout << "Error. Trying to equip a nonexistent materia" << std::endl;
@@ -106,7 +109,19 @@ void			Character::equip(AMateria* m)
 
 void			Character::unequip(int idx)
 {
-	std::cout << "Unequip index " << idx << std::endl;
+	if (this->idx > 0 && idx >= 0 && idx < this->idx)
+	{
+		while (idx < this->idx - 1)
+		{
+			this->materia[idx] = this->materia[idx + 1];
+			idx += 1;
+		}
+		this->materia[this->idx - 1] = NULL;
+		this->idx -= 1;
+		std::cout << "Success. Materia has been unequiped" << std::endl;
+	}
+	else
+		std::cout << "Error. Trying no unequip a nonexistent materia" << std::endl;
 	return ;
 }
 

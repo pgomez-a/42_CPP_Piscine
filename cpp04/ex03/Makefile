@@ -1,4 +1,4 @@
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re run
 
 NAME		= interfaces
 
@@ -6,6 +6,7 @@ SRCS		= AMateria.cpp		\
 		  Cure.cpp		\
 		  Ice.cpp		\
 		  Character.cpp		\
+		  MateriaSource.cpp	\
 		  main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
@@ -28,3 +29,7 @@ fclean:		clean
 	@ $(RM) $(NAME)
 
 re:		fclean all
+
+run:
+	@ clear
+	@ ./$(NAME)
