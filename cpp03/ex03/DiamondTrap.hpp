@@ -1,5 +1,5 @@
-#ifndef DIAMONDTRAP_H
-# define DIAMONDTRAP_H
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
@@ -8,7 +8,6 @@
 class	DiamondTrap : public FragTrap, public ScavTrap
 {
 	public:
-		DiamondTrap(void);
 		DiamondTrap(std::string name);
 		DiamondTrap(DiamondTrap const & diamondtrap);
 		~DiamondTrap(void);
@@ -21,6 +20,8 @@ class	DiamondTrap : public FragTrap, public ScavTrap
 		std::string	getName(void) const;
 
 	private:
+		DiamondTrap(void);
+
 		std::string	_name;
 };
 

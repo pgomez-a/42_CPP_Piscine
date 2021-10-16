@@ -1,15 +1,14 @@
-#ifndef CLAPTRAP_H
-# define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 
 class	ClapTrap
 {
 	public:
-		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & claptrap);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 
 		ClapTrap&	operator=(ClapTrap const & claptrap);
 
@@ -25,6 +24,8 @@ class	ClapTrap
 		unsigned int	getDamage(void) const;
 
 	protected:
+		ClapTrap(void);
+
 		std::string	_name;
 		unsigned int	_hitpoints;
 		unsigned int	_energy_points;

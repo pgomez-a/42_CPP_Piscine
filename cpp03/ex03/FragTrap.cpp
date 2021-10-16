@@ -31,9 +31,9 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(FragTrap const & fragtrap)
 {
-	*this = fragtrap;
 	std::cout << this->_name << " FragTrap has called his Big Brother!"
 		<< " Now there are two of them!" << std::endl;
+	*this = fragtrap;
 	return ;
 }
 

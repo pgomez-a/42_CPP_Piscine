@@ -1,15 +1,14 @@
-#ifndef CLAPTRAP_H
-# define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 
 class	ClapTrap
 {
 	public:
-		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & claptrap);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 
 		ClapTrap&	operator=(ClapTrap const & claptrap);
 
@@ -17,14 +16,16 @@ class	ClapTrap
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 
-		virtual std::string	getName(void) const;
-		unsigned int		getMaxHP(void) const;
-		unsigned int		getMaxEP(void) const;
-		unsigned int		getHitPoints(void) const;
-		unsigned int		getEnergy(void) const;
-		unsigned int		getDamage(void) const;
+		std::string	getName(void) const;
+		unsigned int	getMaxHP(void) const;
+		unsigned int	getMaxEP(void) const;
+		unsigned int	getHitPoints(void) const;
+		unsigned int	getEnergy(void) const;
+		unsigned int	getDamage(void) const;
 
 	protected:
+		ClapTrap(void);
+
 		std::string	_name;
 		unsigned int	_hitpoints;
 		unsigned int	_energy_points;

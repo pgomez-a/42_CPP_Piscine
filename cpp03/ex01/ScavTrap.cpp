@@ -30,8 +30,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(ScavTrap const & scavtrap)
 {
-	*this = scavtrap;
 	std::cout << this->_name << " ScavTrap has been duplicated!! :(" << std::endl;
+	*this = scavtrap;
 	return ;
 }
 
@@ -55,6 +55,8 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & scavtrap)
 	this->_hitpoints = scavtrap.getHitPoints();
 	this->_energy_points = scavtrap.getEnergy();
 	this->_attack_damage = scavtrap.getDamage();
+	this->_max_hp = scavtrap.getMaxHP();
+	this->_max_ep = scavtrap.getMaxEP();
 	return (*this);
 }
 

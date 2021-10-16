@@ -30,8 +30,14 @@ static void	Frag_Attack_Frag(FragTrap& chatarraUno, FragTrap& chatarraDos)
 	return ;
 }
 
+static void	search_leaks(void)
+{
+	system("leaks Aaaaand...");
+}
+
 int	main(void)
 {
+	atexit(search_leaks);
 	{
 		std::cout << "------- FRAG TRAP vs FRAG TRAP -------" << std::endl;
 		FragTrap	chatarraUno("Chat-U");
@@ -51,6 +57,11 @@ int	main(void)
 		Frag_Attack_Scav(chatarraUno, maquinaUno);
 		Frag_Attack_Scav(chatarraUno, maquinaUno);
 		maquinaUno.beRepaired(30);
+		Scav_Attack_Frag(maquinaUno, chatarraUno);
+		Scav_Attack_Frag(maquinaUno, chatarraUno);
+		Scav_Attack_Frag(maquinaUno, chatarraUno);
+		Scav_Attack_Frag(maquinaUno, chatarraUno);
+		Scav_Attack_Frag(maquinaUno, chatarraUno);
 		Scav_Attack_Frag(maquinaUno, chatarraUno);
 		chatarraUno.highFivesGuys();
 		chatarraUno.highFivesGuys();

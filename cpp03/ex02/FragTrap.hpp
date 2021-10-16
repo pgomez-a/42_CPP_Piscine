@@ -1,5 +1,5 @@
-#ifndef FRAGTRAP_H
-# define FRAGTRAP_H
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 # include "ClapTrap.hpp"
 # include <iostream>
@@ -7,7 +7,6 @@
 class	FragTrap : public ClapTrap
 {
 	public:
-		FragTrap(void);
 		FragTrap(std::string name);
 		FragTrap(FragTrap const & fragtrap);
 		~FragTrap(void);
@@ -15,6 +14,9 @@ class	FragTrap : public ClapTrap
 		FragTrap&	operator=(FragTrap const & fragtrap);
 
 		void		highFivesGuys(void) const;
+
+	private:
+		FragTrap(void);
 };
 
 #endif

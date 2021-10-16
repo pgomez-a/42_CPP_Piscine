@@ -27,8 +27,14 @@ static void	Clap_Attack_Scav(ClapTrap& robotUno, ScavTrap& maquinaUno)
 	std::cout << std::endl;
 }
 
+void	search_leaks(void)
+{
+	system("leaks Aaaaand...");
+}
+
 int	main(void)
 {
+	atexit(search_leaks);
 	{
 		std::cout << "------- SCAV TRAP vs SCAV TRAP -------" << std::endl;
 		ScavTrap	maquinaUno("Dek-U");

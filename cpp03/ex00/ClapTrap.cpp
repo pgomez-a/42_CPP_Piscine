@@ -123,6 +123,16 @@ std::string	ClapTrap::getName(void) const
 	return (this->_name);
 }
 
+unsigned int	ClapTrap::getMaxHP(void) const
+{
+	return (this->_max_hp);
+}
+
+unsigned int	ClapTrap::getMaxEP(void) const
+{
+	return (this->_max_ep);
+}
+
 unsigned int	ClapTrap::getHitPoints(void) const
 {
 	return (this->_hitpoints);
@@ -136,14 +146,4 @@ unsigned int	ClapTrap::getEnergy(void) const
 unsigned int	ClapTrap::getDamage(void) const
 {
 	return (this->_attack_damage);
-}
-
-unsigned int	ClapTrap::getMaxHP(void) const
-{
-	return (this->_max_hp);
-}
-
-unsigned int	ClapTrap::getMaxEP(void) const
-{
-	return (this->_max_ep);
 }

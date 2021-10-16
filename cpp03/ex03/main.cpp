@@ -3,7 +3,7 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-void	diamond_attack_diamond(DiamondTrap& diamondOne, DiamondTrap& diamondTwo)
+static void	diamond_attack_diamond(DiamondTrap& diamondOne, DiamondTrap& diamondTwo)
 {
 	std::cout << std::endl;
 	diamondOne.attack(diamondTwo.getName());
@@ -11,11 +11,18 @@ void	diamond_attack_diamond(DiamondTrap& diamondOne, DiamondTrap& diamondTwo)
 	std::cout << std::endl;
 }
 
+static void	search_leaks(void)
+{
+	system("leaks Aaaaand...");
+}
+
 int	main(void)
 {
 	DiamondTrap	diamondOne("Dall-E");
 	DiamondTrap	diamondTwo("Wall-0");
+	DiamondTrap	diamondThree(diamondOne);
 
+	atexit(search_leaks);
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << "------- DIAMOND ATTACK DIAMOND -------" << std::endl;

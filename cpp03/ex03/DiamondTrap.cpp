@@ -6,7 +6,7 @@
  ** Copy Constructor ~ Canonical Form
  **/
 
-DiamondTrap::DiamondTrap(void) : ClapTrap("Default_clap_name")
+DiamondTrap::DiamondTrap(void) : ClapTrap("Default_clap_name"), FragTrap(), ScavTrap()
 {
 	FragTrap	fragtrap("temp");
 
@@ -60,6 +60,11 @@ DiamondTrap::~DiamondTrap(void)
 DiamondTrap&	DiamondTrap::operator=(DiamondTrap const & diamondtrap)
 {
 	this->_name = diamondtrap.FragTrap::getName();
+	this->_hitpoints = diamondtrap.getHitPoints();
+	this->_energy_points = diamondtrap.getEnergy();
+	this->_attack_damage = diamondtrap.getDamage();
+	this->_max_hp = diamondtrap.getMaxHP();
+	this->_max_ep = diamondtrap.getMaxEP();
 	return (*this);
 }
 

@@ -30,8 +30,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(ScavTrap const & scavtrap)
 {
-	*this = scavtrap;
 	std::cout << this->_name << " ScavTrap has been duplicated!! :(" << std::endl;
+	*this = scavtrap;
 	return ;
 }
 
@@ -55,6 +55,8 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & scavtrap)
 	this->_hitpoints = scavtrap.getHitPoints();
 	this->_energy_points = scavtrap.getEnergy();
 	this->_attack_damage = scavtrap.getDamage();
+	this->_max_hp = scavtrap.getMaxHP();
+	this->_max_ep = scavtrap.getMaxEP();
 	return (*this);
 }
 
@@ -77,6 +79,10 @@ void		ScavTrap::attack(std::string const & target) const
 	return ;
 }
 
+/**
+ ** Special move for ScavTrap object - It consumes 10 energy points
+ **/
+
 void		ScavTrap::guardGate(void)
 {
 	if (this->_energy_points > 0)
@@ -86,7 +92,7 @@ void		ScavTrap::guardGate(void)
 		else
 			this->_energy_points -= 10;
 		std::cout << this->_name << " ScavTrap has entered in Gatekeeper mode! "
-			<< this->_name << " ScavTrap has consume 5 energy points! XD" << std::endl;
+			<< this->_name << " ScavTrap has consume 10 energy points! XD" << std::endl;
 	}
 	else
 	{
