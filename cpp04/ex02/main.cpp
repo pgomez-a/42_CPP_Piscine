@@ -4,6 +4,11 @@
 #include "Cat.hpp"
 #include <iostream>
 
+static void	search_leaks(void)
+{
+	system("leaks call_animals");
+}
+
 int	main(void)
 {
 	const Animal*	j = new Dog();
@@ -11,6 +16,7 @@ int	main(void)
 	const Animal*	animal[4] = {new Dog(*j), new Dog(*j), new Cat(*i), new Cat(*i)};
 	int		count;
 
+	atexit(search_leaks);
 	std::cout << std::endl << std::endl;
 
 	std::cout << "j ------> " << j << " -> " << j->getBrain() << std::endl;

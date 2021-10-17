@@ -23,8 +23,8 @@ Cat::Cat(Cat const & cat)
 Cat::Cat(Animal const & animal)
 {
 	std::cout << "BRILLIANT! Cat is trying to COPY an ANIMAL" << std::endl;
-	this->_brain = new Brain();
 	this->_type = "Cat";
+	this->_brain = new Brain();
 	if (animal.getType() == "Cat")
 		*(this->_brain) = *(animal.getBrain());
 	return ;

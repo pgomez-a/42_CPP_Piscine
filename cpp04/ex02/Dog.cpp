@@ -49,8 +49,7 @@ Dog&	Dog::operator=(Dog const & dog)
 {
 	std::cout << "Dog DEEP Copy has STARTED" << std::endl;
 	this->_type = dog.getType();
-	if (dog.getType() == "Dog")
-		*(this->_brain) = *(dog.getBrain());
+	*(this->_brain) = *(dog.getBrain());
 	std::cout << "Dog DEEP Copy has ENDED" << std::endl;
 	return (*this);
 }
