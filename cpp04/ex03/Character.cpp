@@ -4,11 +4,9 @@
  ** Default Protected Constructor
  **/
 
-Character::Character(void)
+Character::Character(void) : name("character"), idx(0)
 {
 	std::cout << "Default Constructor - Protected Access Control" << std::endl;
-	this->name = "character";
-	this->idx = 0;
 	return ;
 }
 
@@ -17,12 +15,10 @@ Character::Character(void)
 ** Copy Constructor
 **/
 
-Character::Character(std::string const & name)
+Character::Character(std::string const & name) : name(name), idx(0)
 {
 	std::cout << "Character Constructor called " << name
 		<< " has been created" << std::endl;
-	this->name = name;
-	this->idx = 0;
 	return ;
 }
 
@@ -63,14 +59,11 @@ Character&	Character::operator=(Character const & character)
 		this->materia[this->idx - 1] = NULL;
 		this->idx -= 1;
 	}
-	if (character.idx >= 1)
+	while (this->idx < character.idx)
 	{
-		while (this->idx < character.idx)
-		{
-			this->idx += 1;
-			this->materia[this->idx - 1]
-				= character.materia[this->idx - 1]->clone();
-		}
+		this->materia[this->idx]
+			= character.materia[this->idx]->clone();
+		this->idx += 1;
 	}
 	return (*this);
 }

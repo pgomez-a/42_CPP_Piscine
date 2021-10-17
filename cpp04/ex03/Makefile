@@ -30,6 +30,6 @@ fclean:		clean
 
 re:		fclean all
 
-run:
+run:		all
 	@ clear
 	@ ./$(NAME)

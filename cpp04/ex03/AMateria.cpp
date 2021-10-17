@@ -4,10 +4,9 @@
  ** Default Protected Constructor
  **/
 
-AMateria::AMateria(void)
+AMateria::AMateria(void) : type("materia")
 {
 	std::cout << "Default Constructor - Protected Access Control" << std::endl;
-	this->type = "materia";
 	return ;
 }
 
@@ -16,11 +15,10 @@ AMateria::AMateria(void)
  ** Copy Constructor
  **/
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const & type) : type(type)
 {	
 	std::cout << "AMateria Constructor has been called to stablish type "
 		<< type << std::endl;
-	this->type = type;
 	return ;
 }
 

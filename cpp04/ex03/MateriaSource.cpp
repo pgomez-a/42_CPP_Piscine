@@ -4,11 +4,10 @@
  ** Default Constructor
  **/
 
-MateriaSource::MateriaSource(void)
+MateriaSource::MateriaSource(void) : idx(0)
 {
 	std::cout << "Default MateriaSource Constructor has been called"
 		<< std::endl;
-	this->idx = 0;
 	return ;
 }
 
@@ -71,6 +70,8 @@ void		MateriaSource::learnMateria(AMateria* materia)
 		this->materia[this->idx] = materia;
 		this->idx += 1;
 	}
+	else
+		std::cout << "MateriaSource Bag is full :(" << std::endl;
 	return ;
 }
 

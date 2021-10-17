@@ -6,7 +6,7 @@
 #include "Cure.hpp"
 #include "Ice.hpp"
 
-void	search_leaks(void)
+static void	search_leaks(void)
 {
 	std::cout << std::endl << std::endl;
 	system("leaks interfaces");
