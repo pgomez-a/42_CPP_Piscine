@@ -33,7 +33,7 @@ Animal::Animal(Animal const & animal)
 Animal::~Animal(void)
 {
 	std::cout << "Ohh... " << this->_type
-		<< "Animal  has decided to leave this universe... :(" << std::endl;
+		<< " Animal has decided to leave this universe... :(" << std::endl;
 	return ;
 }
 

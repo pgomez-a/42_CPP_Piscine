@@ -1,4 +1,4 @@
-.PHONY:	all clean fclean re
+.PHONY:	all clean fclean re run
 
 NAME		= call_animals
 
@@ -29,3 +29,7 @@ fclean:		clean
 	@ $(RM) $(NAME)
 
 re:		fclean all
+
+run:		all
+	@ clear
+	@ ./$(NAME)
