@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 16:09:35 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/19 16:13:02 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "DiamondTrap.hpp"
 
 /**
@@ -12,8 +24,8 @@ DiamondTrap::DiamondTrap(void) : ClapTrap("Default_clap_name"), FragTrap(), Scav
 
 	std::cout << "Default DiamondTrap has woken up...!!" << std::endl;
 	this->_name = "Default";
-	this->_max_hp = fragtrap.getHitPoints();
-	this->_max_ep = ScavTrap::_energy_points;
+	this->_max_hp = fragtrap.getMaxHP();
+	this->_max_ep = ScavTrap::_max_ep;
 	this->_hitpoints = this->_max_hp;;
 	this->_energy_points= this->_max_ep;
 	this->_attack_damage = fragtrap.getDamage();
@@ -26,8 +38,8 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Frag
 
 	std::cout << name << " DiamondTrap has woken up...!!" << std::endl;
 	this->_name = name;
-	this->_max_hp = fragtrap.getHitPoints(); 
-	this->_max_ep = ScavTrap::_energy_points;
+	this->_max_hp = fragtrap.getMaxHP(); 
+	this->_max_ep = ScavTrap::_max_ep;
 	this->_hitpoints = this->_max_hp;
 	this->_energy_points = this->_max_ep;
 	this->_attack_damage = fragtrap.getDamage();
@@ -72,7 +84,7 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const & diamondtrap)
  ** DiamondTrap attacks using ScavTrap attack function
  **/
 
-void		DiamondTrap::attack(std::string const & target) const
+void	DiamondTrap::attack(std::string const & target) const
 {
 	this->ScavTrap::attack(target);
 	return ;
@@ -82,7 +94,7 @@ void		DiamondTrap::attack(std::string const & target) const
  ** DiamondTrap tell its name and its ClapTrap name
  **/
 
-void		DiamondTrap::whoAmI(void) const
+void	DiamondTrap::whoAmI(void) const
 {
 	std::cout << "Hi!! I am " << this->_name << " DiamondTrap,"
 		<< " but people use to call me " << this->ClapTrap::_name

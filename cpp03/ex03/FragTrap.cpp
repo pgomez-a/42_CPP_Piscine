@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 16:07:43 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/19 16:08:01 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
 
 /**
@@ -66,7 +78,7 @@ FragTrap&	FragTrap::operator=(FragTrap const & fragtrap)
  ** Display a positive high fives request on stdout
  **/
 
-void		FragTrap::highFivesGuys(void) const
+void	FragTrap::highFivesGuys(void) const
 {
 	std::cout << "Hey Hello!! Want to high five? :))" << std::endl;
 	return ;

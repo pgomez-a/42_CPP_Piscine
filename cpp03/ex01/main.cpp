@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 15:57:41 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/19 15:59:06 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include <iostream>
@@ -66,6 +78,7 @@ int	main(void)
 		maquinaUno.guardGate();
 		maquinaUno.guardGate();
 		maquinaUno.guardGate();
+		std::cout << std::endl;
 		robotUno.beRepaired(5);
 	}
 	std::cout << std::endl;

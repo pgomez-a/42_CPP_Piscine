@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 16:03:58 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/19 16:04:05 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
@@ -13,7 +25,7 @@ class	FragTrap : public ClapTrap
 
 		FragTrap&	operator=(FragTrap const & fragtrap);
 
-		void		highFivesGuys(void) const;
+		void	highFivesGuys(void) const;
 
 	private:
 		FragTrap(void);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 15:56:42 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/19 16:05:24 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 /**
@@ -64,7 +76,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const & scavtrap)
  ** ScavTrap attack reducing the hitpoints of its oponents
  **/
 
-void		ScavTrap::attack(std::string const & target) const
+void	ScavTrap::attack(std::string const & target) const
 {
 	if (this->_hitpoints > 0)
 	{
@@ -83,7 +95,7 @@ void		ScavTrap::attack(std::string const & target) const
  ** Special move for ScavTrap object - It consumes 10 energy points
  **/
 
-void		ScavTrap::guardGate(void)
+void	ScavTrap::guardGate(void)
 {
 	if (this->_energy_points > 0)
 	{

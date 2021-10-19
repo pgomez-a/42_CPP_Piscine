@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 16:05:43 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/19 16:06:34 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 /**
@@ -61,7 +73,7 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & claptrap)
  ** Attack the specified target
  **/
 
-void		ClapTrap::attack(std::string const & target) const
+void	ClapTrap::attack(std::string const & target) const
 {
 	if (this->_hitpoints > 0)
 	{
@@ -80,7 +92,7 @@ void		ClapTrap::attack(std::string const & target) const
  ** Receive damage from another object
  **/
 
-void		ClapTrap::takeDamage(unsigned int amount)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hitpoints > 0)
 	{
@@ -103,7 +115,7 @@ void		ClapTrap::takeDamage(unsigned int amount)
  ** Recover some hitpoints so that ClapTrap can attack again
  **/
 
-void		ClapTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	this->_hitpoints += amount;
 	if (this->_hitpoints > this->_max_hp)

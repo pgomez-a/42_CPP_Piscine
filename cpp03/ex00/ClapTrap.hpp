@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 15:52:47 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/19 15:54:01 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
@@ -16,7 +28,7 @@ class	ClapTrap
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 
-		std::string	getName(void) const;
+		std::string		getName(void) const;
 		unsigned int	getMaxHP(void) const;
 		unsigned int	getMaxEP(void) const;
 		unsigned int	getHitPoints(void) const;
@@ -26,7 +38,7 @@ class	ClapTrap
 	private:
 		ClapTrap(void);
 
-		std::string	_name;
+		std::string		_name;
 		unsigned int	_hitpoints;
 		unsigned int	_energy_points;
 		unsigned int	_attack_damage;
