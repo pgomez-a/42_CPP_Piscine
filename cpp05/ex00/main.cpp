@@ -2,31 +2,45 @@
 #include <iostream>
 #include <exception>
 
+static void	search_leaks(void)
+{
+	std::cout << std::endl << std::endl;
+	system("leaks bureaucrat");
+}
+
 int	main(void)
 {
-	Bureaucrat	bur("Pablo", 5);
-
+	atexit(search_leaks);
 	try
 	{
-		std::cout << bur << std::endl;
-		bur.incGrade();
-		bur.incGrade();
-		bur.incGrade();
-		std::cout << bur << std::endl;
-	}
-	catch(const char * msg)
-	{
-		std::string	tmp_msg = msg;
+		Bureaucrat	burOne("Dall-E", 5);
+		Bureaucrat	burTwo("Wall-E", 149);
 
-		if (tmp_msg == "low")
-			std::cout << "ERROR LOW GRADE" << std::endl;
-		else if (tmp_msg == "high")
-			std::cout << "ERROR HIGH GRADE" << std::endl;
-		else
-			std::cout << "UNKNOWN ERROR" << std::endl;
+		std::cout << std::endl;
+		std::cout << burOne << std::endl;
+		std::cout << burTwo << std::endl;
+		burOne.incGrade();
+		std::cout << burOne << std::endl;
+		std::cout << burTwo << std::endl;
+		burOne.incGrade();
+		std::cout << burOne << std::endl;
+		std::cout << burTwo << std::endl;
+		burOne.incGrade();
+		std::cout << burOne << std::endl;
+		std::cout << burTwo << std::endl;
+		burTwo.decGrade();
+		std::cout << burOne << std::endl;
+		std::cout << burTwo << std::endl;
+		burTwo.decGrade();
+		std::cout << burOne << std::endl;
+		std::cout << burTwo << std::endl;
 	}
 	catch(std::exception & e)
 	{
-		std::cout << "Exception" << std::endl;
+		std::cout << std::endl;
+		std::cout << "*** EXCEPTION CAUGHT!!! ***" << std::endl;
+		std::cout << "Grade out of range" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
+	return (0);
 }

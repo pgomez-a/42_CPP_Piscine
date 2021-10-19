@@ -1,18 +1,36 @@
 #include "Bureaucrat.hpp"
 
 /**
- ** Bureaucrat Constructor
+ ** Default Bureaucrat Constructor
+ ** Bureaucrat Constructor with Name and Grade parameters
+ ** Copy Bureaucrat Constructor
  **/
+
+Bureaucrat::Bureaucrat(void) : _name("Default")
+{
+	std::cout << "Bureaucrat Default Constructor - Private Access Control" << std::endl;
+	this->_grade = 50;
+	return ;
+}
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 {
-	std::cout << "Bureaucraut Constructor called" << std::endl;
+	std::cout << this->_name
+		<< " Bureaucraut Constructor called" << std::endl;
 	if (grade < 1)
-		throw "high";//Bureaucraut::GradeTooHighException;
+		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
-		throw "low";//Bureaucraut::GradeTooLowException;
+		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade = grade;
+	return ;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const & bureaucrat) : _name(bureaucrat.getName())
+{
+	std::cout << this->_name <<
+		" Bureaucrat Copy Constructor called" << std::endl;
+	*this = bureaucrat;
 	return ;
 }
 
@@ -22,8 +40,19 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Bureaucraut Destructor called" << std::endl;
+	std::cout << this->_name
+		<< " Bureaucraut Destructor called" << std::endl;
 	return ;
+}
+
+/**
+ ** Assignation Operator Overload
+ **/
+
+Bureaucrat&	Bureaucrat::operator=(Bureaucrat const & bureaucrat)
+{
+	this->_grade = bureaucrat.getGrade();
+	return (*this);
 }
 
 /**
@@ -51,7 +80,7 @@ int			Bureaucrat::getGrade(void) const
 void			Bureaucrat::decGrade(void)
 {
 	if (this->_grade == 150)
-		throw "low";//Bureaucraut::GradeTooLowException;
+		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade += 1;
 	return ;
@@ -64,7 +93,7 @@ void			Bureaucrat::decGrade(void)
 void			Bureaucrat::incGrade(void)
 {
 	if (this->_grade == 1)
-		throw "high";//Bureaucraut::GradeTooHighException;
+		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade -= 1;
 	return ;
@@ -74,7 +103,7 @@ void			Bureaucrat::incGrade(void)
  ** Exception Class thrown when the Grade is too high
  **/
 
-const char*	Bureaucrat::GradeTooHighException::what(void) const throw(void)
+const char*	Bureaucrat::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade is Too Hight");
 }
@@ -83,9 +112,9 @@ const char*	Bureaucrat::GradeTooHighException::what(void) const throw(void)
  ** Exception Class thrown when the Grade is too low
  **/
 
-const char*	Bureaucrat::GradeTooHighException::what(void) const throw(void)
+const char*	Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade is Too Hight");
+	return ("Grade is Too Low");
 }
 
 /**
