@@ -67,36 +67,36 @@ std::string const	Form::getName(void) const
 	return (this->_name);
 }
 
-bool				Form::getBoolSigned(void) const
+bool			Form::getBoolSigned(void) const
 {
 	return (this->_signed);
 }
 
-int					Form::getSign(void) const
+int			Form::getSign(void) const
 {
 	return (this->_sign_grade);
 }
 
-int					Form::getExec(void) const
+int			Form::getExec(void) const
 {
 	return (this->_exec_grade);
 }
 
 /**
- ** Makes the form signed if the bureaucrat's grade is high enough
+ ** Makes the Form signed if the bureaucrat's grade is high enough
  **/
 
 void	Form::beSigned(Bureaucrat const & bureaucrat)
 {
 	int	bur_grade;
 
-	if (form->_signed == false)
+	if (this->_signed == false)
 	{
 		bur_grade = bureaucrat.getGrade();
 		if (bur_grade <= this->_sign_grade)
 			this->_signed = true;
 		else
-			throw Form::GradeTooLowException;
+			throw Form::GradeTooLowException();
 	}
 	return ;
 }

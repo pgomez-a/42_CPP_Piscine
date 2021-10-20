@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 #include <exception>
 
@@ -10,37 +11,28 @@ static void	search_leaks(void)
 
 int	main(void)
 {
-	atexit(search_leaks);
-	try
-	{
-		Bureaucrat	burOne("Dall-E", 5);
-		Bureaucrat	burTwo("Wall-E", 149);
+	Bureaucrat	burOne("Dall-E", 19);
+	Bureaucrat	burTwo("Wall-E", 100);
+	Form		formOne("PaperOne", 50, 50);
+	Form		formTwo("PaperTwo", 2, 5);
 
-		std::cout << std::endl;
-		std::cout << burOne << std::endl;
-		std::cout << burTwo << std::endl;
-		burOne.incGrade();
-		std::cout << burOne << std::endl;
-		std::cout << burTwo << std::endl;
-		burOne.incGrade();
-		std::cout << burOne << std::endl;
-		std::cout << burTwo << std::endl;
-		burOne.incGrade();
-		std::cout << burOne << std::endl;
-		std::cout << burTwo << std::endl;
-		burTwo.decGrade();
-		std::cout << burOne << std::endl;
-		std::cout << burTwo << std::endl;
-		burTwo.decGrade();
-		std::cout << burOne << std::endl;
-		std::cout << burTwo << std::endl;
-	}
-	catch(std::exception & e)
-	{
-		std::cout << std::endl;
-		std::cout << "*** EXCEPTION CAUGHT!!! ***" << std::endl;
-		std::cout << "Grade out of range" << std::endl;
-		std::cout << e.what() << std::endl;
-	}
+	atexit(search_leaks);
+	std::cout << std::endl;
+	std::cout << formOne << std::endl;
+	std::cout << formTwo << std::endl;
+	std::cout << std::endl;
+	burTwo.signForm(formOne);
+	burOne.signForm(formOne);
+	burTwo.signForm(formOne);
+	burOne.signForm(formOne);
+
+	std::cout << std::endl;
+	burTwo.signForm(formTwo);
+	burOne.signForm(formTwo);
+
+	std::cout << std::endl;
+	std::cout << formOne << std::endl;
+	std::cout << formTwo << std::endl;
+	std::cout << std::endl;
 	return (0);
 }

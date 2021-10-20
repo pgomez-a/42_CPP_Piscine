@@ -100,6 +100,34 @@ void			Bureaucrat::incGrade(void)
 }
 
 /**
+ ** Makes a Bureaucrat sign the given Form
+ **/
+
+void		Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		if (form.getBoolSigned())
+			std::cout << this->_name << " cannot sign "
+				<< form.getName() << " because it's signed"
+				<< std::endl;
+		else
+		{
+			form.beSigned(*this);
+			std::cout << this->_name << " signs "
+				<< form.getName() << std::endl;
+		}
+	}
+	catch(std::exception & e)
+	{
+		std::cout << this->_name << " cannot sign "
+			<< form.getName() << " because grade is TOO LOW!!"
+			<< std::endl;
+	}
+	return ;
+}
+
+/**
  ** Exception Class thrown when the Grade is too high
  **/
 
