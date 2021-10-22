@@ -8,15 +8,12 @@
 
 Bureaucrat::Bureaucrat(void) : _name("Default")
 {
-	std::cout << "Bureaucrat Default Constructor - Private Access Control" << std::endl;
 	this->_grade = 50;
 	return ;
 }
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 {
-	std::cout << this->_name
-		<< " Bureaucraut Constructor called" << std::endl;
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
@@ -28,8 +25,6 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(Bureaucrat const & bureaucrat) : _name(bureaucrat.getName())
 {
-	std::cout << this->_name <<
-		" Bureaucrat Copy Constructor called" << std::endl;
 	*this = bureaucrat;
 	return ;
 }
@@ -40,8 +35,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const & bureaucrat) : _name(bureaucrat.getName
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << this->_name
-		<< " Bureaucraut Destructor called" << std::endl;
 	return ;
 }
 
