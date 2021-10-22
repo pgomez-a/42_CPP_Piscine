@@ -18,6 +18,8 @@ int	main(void)
 
 	atexit(search_leaks);
 	std::cout << std::endl;
+	std::cout << burOne << std::endl;
+	std::cout << burTwo << std::endl;
 	std::cout << formOne << std::endl;
 	std::cout << formTwo << std::endl;
 	std::cout << std::endl;
