@@ -8,15 +8,12 @@
 
 Bureaucrat::Bureaucrat(void) : _name("Default")
 {
-	std::cout << "Bureaucrat Default Constructor - Private Access Control" << std::endl;
 	this->_grade = 50;
 	return ;
 }
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 {
-	std::cout << this->_name
-		<< " Bureaucraut Constructor called" << std::endl;
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
@@ -28,8 +25,6 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(Bureaucrat const & bureaucrat) : _name(bureaucrat.getName())
 {
-	std::cout << this->_name <<
-		" Bureaucrat Copy Constructor called" << std::endl;
 	*this = bureaucrat;
 	return ;
 }
@@ -40,8 +35,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const & bureaucrat) : _name(bureaucrat.getName
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << this->_name
-		<< " Bureaucraut Destructor called" << std::endl;
 	return ;
 }
 
@@ -100,29 +93,43 @@ void			Bureaucrat::incGrade(void)
 }
 
 /**
- ** Makes a Bureaucrat sign the given Form
+ ** Make a Bureaucrat sign the given Form
  **/
 
 void		Bureaucrat::signForm(Form& form)
 {
 	try
 	{
-		if (form.getBoolSigned())
-			std::cout << this->_name << " cannot sign "
-				<< form.getName() << " because it's signed"
-				<< std::endl;
-		else
-		{
-			form.beSigned(*this);
-			std::cout << this->_name << " signs "
-				<< form.getName() << std::endl;
-		}
+		form.beSigned(*this);
+		std::cout << this->_name << " signs "
+			<< form.getName() << std::endl;
 	}
 	catch(std::exception & e)
 	{
 		std::cout << this->_name << " cannot sign "
-			<< form.getName() << " because grade is TOO LOW!!"
-			<< std::endl;
+			<< form.getName() << " because " 
+			<< e.what() << std::endl;;
+	}
+	return ;
+}
+
+/**
+ ** Make a Bureaucrat sign the given Form
+ **/
+
+void		Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executes "
+			<< form.getName() << std::endl;
+	}
+	catch(std::exception & e)
+	{
+		std::cout << this->_name << " cannot execute "
+			<< form.getName() << " because "
+			<< e.what() << std::endl;
 	}
 	return ;
 }

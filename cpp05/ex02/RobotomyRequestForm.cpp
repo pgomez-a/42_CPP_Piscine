@@ -6,25 +6,21 @@
  ** Copy Roboto Constructor
  **/
 
-RobotomyRequestForm::RobotomyRequestForm(void) : _target("Default")
+RobotomyRequestForm::RobotomyRequestForm(void) :
+	Form("RobotomyRequestForm", 72, 45), _target("Default")
 {
-	std::cout << "Roboto Default Constructor - Private Access Control" << std::endl;
 	return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const & target) : _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string const & target) :
+	Form("RobotomyRequestForm", 72, 45), _target(target)
 {
-	std::cout << this->_target
-		<< " Roboto Constructor called" << std::endl;
-	makeDrillingNoises();
 	return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & roboto) : _target(roboto.getTarget())
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & roboto) :
+	Form("RobotomyRequestForm", 72, 45), _target(roboto.getTarget())
 {
-	std::cout << this->_target
-		<< " Roboto Copy Constructor called" << std::endl;
-	this->makeDrillingNoises();
 	return ;
 }
 
@@ -34,8 +30,6 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & roboto) : _
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
-	std::cout << this->_target
-		<< " Roboto Destructor called" << std::endl;
 	return ; 
 }
 
@@ -45,8 +39,9 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const & roboto)
 {
-	std::cout << "Does not make sense to assign Roboto "
-		<< roboto.getTarget() << std::endl;
+	std::cout << "Does not make sense to assign "
+		<< roboto.getName() << " to " << this->getName()
+		<< std::endl;
 	return (*this);
 }
 
@@ -63,9 +58,18 @@ std::string	RobotomyRequestForm::getTarget(void) const
  ** Tell if target has been robotomized successfully 50% of the time
  **/
 
-void		RobotomyRequestForm::makeDrillingNoises(void)
+void		RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << this->_target
-		<< " has been robotomized 50% of the time" << std::endl;
+	if (!this->getBoolSigned())
+		throw Form::NotSignedException();
+	if (executor.getGrade() > this->getExec())
+		throw Form::GradeTooLowException();
+	std::srand(std::time(nullptr));
+	std::cout << "BEEP BEEP BEEP" << std::endl;
+	if (std::rand() % 100 <= 50)
+		std::cout << "Failure while robotomizing " << this->_target << std::endl;
+	else
+		std::cout << this->_target
+			<< " has been robotomized successfully 50% of the time" << std::endl;
 	return ;
 }
