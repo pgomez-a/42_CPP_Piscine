@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 17:15:12 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 17:25:52 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -16,7 +28,7 @@ int	main(void)
 {
 	atexit(search_leaks);
 	{
-		Bureaucrat	walle("Wall-E", 50);
+		Bureaucrat	walle("Wall-E", 5);
 		Form*		shrubbery = new ShrubberyCreationForm("home");
 		Form*		roboto = new RobotomyRequestForm("roboto");
 		Form*		presidential = new PresidentialPardonForm("presidential");
