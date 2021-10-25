@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:23:10 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/10/25 14:27:50 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/10/25 14:43:58 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ WrongCat::~WrongCat(void)
 
 WrongCat&	WrongCat::operator=(WrongCat const & cat)
 {
-	if (this != &cat)
-		this->_type = cat.getType();
+	(void)cat;
 	return (*this);
 }

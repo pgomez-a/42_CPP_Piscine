@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:20:44 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/10/25 14:27:33 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/10/25 14:42:28 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ Cat::~Cat(void)
 
 Cat&	Cat::operator=(Cat const & cat)
 {
-	if (this != &cat)
-		this->_type = cat.getType();
+	(void)cat;
 	return (*this);
 }
 
