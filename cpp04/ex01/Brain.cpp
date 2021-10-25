@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 14:36:09 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 14:36:38 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Brain.hpp"
 
 /**
@@ -38,10 +50,13 @@ Brain::~Brain(void)
 
 Brain&	Brain::operator=(Brain const & brain)
 {
-	std::cout << "Brain DEEP Copy has STARTED" << std::endl;
-	this->_pos = brain.getPos();
-	*(this->_ideas) = *(brain.getIdeas());
-	std::cout << "Brain DEEP Copy has ENDED" << std::endl;
+	if (this != &brain)
+	{
+		std::cout << "Brain DEEP Copy has STARTED" << std::endl;
+		this->_pos = brain.getPos();
+		*(this->_ideas) = *(brain.getIdeas());
+		std::cout << "Brain DEEP Copy has ENDED" << std::endl;
+	}
 	return (*this);
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 14:33:29 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 15:04:28 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 /**
@@ -12,21 +24,11 @@ Dog::Dog(void) : Animal("Dog")
 	return ;
 }
 
-Dog::Dog(Dog const & dog)
+Dog::Dog(Dog const & dog) : Animal("Dog")
 {
 	std::cout << "AMAZING! The copied animal is a DOG!! 8)" << std::endl;
 	this->_brain = new Brain();
 	*this = dog;
-	return ;
-}
-
-Dog::Dog(Animal const & animal)
-{
-	std::cout << "AMAZING! Dog is trying to COPY an ANIMAL" << std::endl;
-	this->_type = "Dog";
-	this->_brain = new Brain();
-	if (animal.getType() == "Dog")
-		*(this->_brain) = *(animal.getBrain());
 	return ;
 }
 
@@ -47,10 +49,13 @@ Dog::~Dog(void)
 
 Dog&	Dog::operator=(Dog const & dog)
 {
-	std::cout << "Dog DEEP Copy has STARTED" << std::endl;
-	this->_type = dog.getType();
-	*(this->_brain) = *(dog.getBrain());
-	std::cout << "Dog DEEP Copy has ENDED" << std::endl;
+	if (this != &dog)
+	{
+		std::cout << "Dog DEEP Copy has STARTED" << std::endl;
+		this->_type = dog.getType();
+		*(this->_brain) = *(dog.getBrain());
+		std::cout << "Dog DEEP Copy has ENDED" << std::endl;
+	}
 	return (*this);
 }
 

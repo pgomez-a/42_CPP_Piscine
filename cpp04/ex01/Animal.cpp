@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 14:32:29 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 14:33:08 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 /**
@@ -43,9 +55,12 @@ Animal::~Animal(void)
 
 Animal&	Animal::operator=(Animal const & animal)
 {
-	this->_type = animal.getType();
-	if (animal.getType() == "Dog" || animal.getType() == "Cat")
-		*(this->getBrain()) = *(animal.getBrain());
+	if (this != &animal)
+	{
+		this->_type = animal.getType();
+		if (animal.getType() == "Dog" || animal.getType() == "Cat")
+			*(this->getBrain()) = *(animal.getBrain());
+	}
 	return (*this);
 }
 

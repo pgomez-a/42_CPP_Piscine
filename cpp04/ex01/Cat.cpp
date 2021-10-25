@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 14:35:20 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 15:04:24 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 
 /**
@@ -12,21 +24,11 @@ Cat::Cat(void) : Animal("Cat")
 	return ;
 }
 
-Cat::Cat(Cat const & cat)
+Cat::Cat(Cat const & cat) : Animal("Cat")
 {
 	std::cout << "BRILLIANT! Copy Cat has been made!!" << std::endl;
 	this->_brain = new Brain();
 	*this = cat;
-	return ;
-}
-
-Cat::Cat(Animal const & animal)
-{
-	std::cout << "BRILLIANT! Cat is trying to COPY an ANIMAL" << std::endl;
-	this->_type = "Cat";
-	this->_brain = new Brain();
-	if (animal.getType() == "Cat")
-		*(this->_brain) = *(animal.getBrain());
 	return ;
 }
 
@@ -47,10 +49,13 @@ Cat::~Cat(void)
 
 Cat&	Cat::operator=(Cat const & cat)
 {
-	std::cout << "Cat DEEP Copy has STARTED" << std::endl;
-	this->_type = cat.getType();
-	*(this->_brain) = *(cat.getBrain());
-	std::cout << "Cat DEEP Copy has ENDED" << std::endl;
+	if (this != &cat)
+	{
+		std::cout << "Cat DEEP Copy has STARTED" << std::endl;
+		this->_type = cat.getType();
+		*(this->_brain) = *(cat.getBrain());
+		std::cout << "Cat DEEP Copy has ENDED" << std::endl;
+	}
 	return (*this);
 }
 

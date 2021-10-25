@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 14:32:10 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 15:05:27 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Brain.hpp"
 #include "Animal.hpp"
 #include "Dog.hpp"
@@ -15,13 +27,17 @@ int	main(void)
 	{
 		const Animal*	j = new Dog();
 		const Animal*	i = new Cat();
-		const Animal*	animal[4] = {new Dog(*j), new Dog(*j), new Cat(*i), new Cat(*i)};
+		Animal*			animal[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
 		int		count;
 
 		std::cout << std::endl << std::endl;
 		std::cout << "j ------> " << j << " -> " << j->getBrain() << std::endl;
 		std::cout << "i ------> " << i << " -> " << i->getBrain() << std::endl;
 		count = 0;
+		*animal[0] = *j;
+		*animal[1] = *j;
+		*animal[2] = *i;
+		*animal[3] = *i;
 		while (count < 4)
 		{
 			std::cout << "animal[" << count << "] " << animal[count]
