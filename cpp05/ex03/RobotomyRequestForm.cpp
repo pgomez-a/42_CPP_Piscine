@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 17:21:54 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 17:23:00 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 /**
@@ -66,7 +78,7 @@ void		RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		throw Form::GradeTooLowException();
 	std::srand(std::time(nullptr));
 	std::cout << "BEEP BEEP BEEP" << std::endl;
-	if (std::rand() % 100 <= 50)
+	if (std::rand() % 100 < 50)
 		std::cout << "Failure while robotomizing " << this->_target << std::endl;
 	else
 		std::cout << this->_target

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 17:32:05 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 18:13:48 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 
 /**
@@ -46,8 +58,8 @@ Form*	Intern::makeForm(std::string const & name, std::string const & target)
 {
 	std::string	action[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	std::string	form_type;
-	int		count;
-	int		output;
+	int			count;
+	int			output;
 	Form*		concrete[3] = {new ShrubberyCreationForm(target),
 					new RobotomyRequestForm(target),
 					new PresidentialPardonForm(target)};

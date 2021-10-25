@@ -1,22 +1,34 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/25 17:14:29 by pgomez-a          #+#    #+#              #
+#    Updated: 2021/10/25 17:38:20 by pgomez-a         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 .PHONY:	all clean fclean re run
 
 NAME		= bureaucrat
 
-SRCS		= Bureaucrat.cpp		\
-		  Form.cpp			\
-		  ShrubberyCreationForm.cpp	\
-		  RobotomyRequestForm.cpp	\
-		  PresidentialPardonForm.cpp	\
-		  Intern.cpp			\
-		  main.cpp
+SRCS		= Bureaucrat.cpp				\
+			  Form.cpp						\
+			  ShrubberyCreationForm.cpp		\
+			  RobotomyRequestForm.cpp		\
+			  PresidentialPardonForm.cpp	\
+			  Intern.cpp					\
+			  main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-CXX		= clang++
+CXX			= clang++
 
 CXXFLAGS	= -Wall -Werror -Wextra
 
-RM		= rm -f
+RM			= rm -f
 
 all:		$(NAME)
 
@@ -29,7 +41,7 @@ clean:
 fclean:		clean
 	@ $(RM) $(NAME)
 
-re:		fclean all
+re:			fclean all
 
 run:		$(NAME)
 	@ clear

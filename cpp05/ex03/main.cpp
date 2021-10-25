@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 17:15:12 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 18:14:37 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -17,34 +29,24 @@ int	main(void)
 {
 	atexit(search_leaks);
 	{
-		Bureaucrat	walle("Wall-E", 40);
 		Intern  	someRandomIntern;
+		Bureaucrat	bur("Wall-E", 45);
 		Form*   	rrf;
-		Form*		scf;
-		Form*		ppf;
-
-		scf = someRandomIntern.makeForm("shrubbery creation", "Bender");
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		ppf = someRandomIntern.makeForm("presidential pardon", "Bender");
-		std::cout << *scf << std::endl;
-		std::cout << *rrf << std::endl;
-		std::cout << *ppf << std::endl;
-		std::cout << std::endl << std::endl;
-		walle.signForm(*scf);
-		walle.signForm(*rrf);
-		walle.signForm(*ppf);
-		std::cout << std::endl << std::endl;
-		walle.executeForm(*scf);
-		walle.executeForm(*rrf);
-		walle.executeForm(*ppf);
-		std::cout << std::endl;
-		std::cout << *scf << std::endl;
-		std::cout << *rrf << std::endl;
-		std::cout << *ppf << std::endl;
 
-		delete rrf;
-		delete scf;
-		delete ppf;
+		if (rrf)
+		{
+			std::cout << bur << std::endl;
+			std::cout << *rrf << std::endl;
+			std::cout << std::endl << std::endl;
+			bur.executeForm(*rrf);
+			bur.signForm(*rrf);
+			bur.executeForm(*rrf);
+			std::cout << std::endl << std::endl;
+			std::cout << bur << std::endl;
+			std::cout << *rrf << std::endl;
+			delete rrf;
+		}
 	}
 	return (0);
 }
