@@ -1,21 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/25 14:15:14 by pgomez-a          #+#    #+#              #
+#    Updated: 2021/10/25 14:15:54 by pgomez-a         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 .PHONY:	all clean fclean re run
 
 NAME		= call_animals
 
 SRCS		= Animal.cpp		\
-		  Dog.cpp		\
-		  Cat.cpp		\
-		  WrongAnimal.cpp	\
-		  WrongCat.cpp		\
-		  main.cpp
+			  Dog.cpp			\
+			  Cat.cpp			\
+			  WrongAnimal.cpp	\
+			  WrongCat.cpp		\
+			  main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-CXX		= clang++
+CXX			= clang++
 
 CXXFLAGS	= -Wall -Werror -Wextra
 
-RM		= rm -f
+RM			= rm -f
 
 all:		$(NAME)
 
@@ -28,7 +40,7 @@ clean:
 fclean:		clean
 	@ $(RM) $(NAME)
 
-re:		fclean all
+re:			fclean all
 
 run:		all
 	@ clear

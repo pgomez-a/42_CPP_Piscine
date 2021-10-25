@@ -44,7 +44,8 @@ WrongAnimal::~WrongAnimal(void)
 
 WrongAnimal&	WrongAnimal::operator=(WrongAnimal const & animal)
 {
-	this->_type = animal.getType();
+	if (this != &animal)
+		this->_type = animal.getType();
 	return (*this);
 }
 
@@ -54,7 +55,7 @@ WrongAnimal&	WrongAnimal::operator=(WrongAnimal const & animal)
 
 void		WrongAnimal::makeSound(void) const
 {
-	std::cout << "BOOO HOOOOO" << std::endl;
+	std::cout << "WrongAnimal says: BOOO HOOOOO" << std::endl;
 	return ;
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 14:19:07 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 14:27:23 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 /**
@@ -11,10 +23,10 @@ Dog::Dog(void) : Animal("Dog")
 	return ;
 }
 
-Dog::Dog(Dog const & dog)
+Dog::Dog(Dog const & dog) : Animal("Dog")
 {
 	std::cout << "AMAZING! The copied animal is a DOG!! 8)" << std::endl;
-	*this = dog;
+	(void)dog;
 	return ;
 }
 
@@ -34,7 +46,8 @@ Dog::~Dog(void)
 
 Dog&	Dog::operator=(Dog const & dog)
 {
-	this->_type = dog.getType();
+	if (this != &dog)
+		this->_type = dog.getType();
 	return (*this);
 }
 
