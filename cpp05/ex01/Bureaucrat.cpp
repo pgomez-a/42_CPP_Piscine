@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 16:34:33 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 16:36:08 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 /**
@@ -44,7 +56,8 @@ Bureaucrat::~Bureaucrat(void)
 
 Bureaucrat&	Bureaucrat::operator=(Bureaucrat const & bureaucrat)
 {
-	this->_grade = bureaucrat.getGrade();
+	if (this != &bureaucrat)
+		this->_grade = bureaucrat.getGrade();
 	return (*this);
 }
 
@@ -61,7 +74,7 @@ std::string const	Bureaucrat::getName(void) const
  ** Return the grade of the Bureaucrat object
  **/
 
-int			Bureaucrat::getGrade(void) const
+int					Bureaucrat::getGrade(void) const
 {
 	return (this->_grade);
 }
@@ -70,7 +83,7 @@ int			Bureaucrat::getGrade(void) const
  ** Decrement the grade or throw an exception
  **/
 
-void			Bureaucrat::decGrade(void)
+void				Bureaucrat::decGrade(void)
 {
 	if (this->_grade == 150)
 		throw Bureaucrat::GradeTooLowException();
@@ -83,7 +96,7 @@ void			Bureaucrat::decGrade(void)
  ** Increment the grade or throw an exception
  **/
 
-void			Bureaucrat::incGrade(void)
+void				Bureaucrat::incGrade(void)
 {
 	if (this->_grade == 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -96,7 +109,7 @@ void			Bureaucrat::incGrade(void)
  ** Makes a Bureaucrat sign the given Form
  **/
 
-void		Bureaucrat::signForm(Form& form)
+void				Bureaucrat::signForm(Form& form)
 {
 	try
 	{
