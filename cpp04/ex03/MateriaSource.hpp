@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 15:27:32 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 16:13:20 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
@@ -9,7 +21,7 @@ class	MateriaSource : public IMateriaSource
 {
 	protected:
 		AMateria*	materia[4];
-		int		idx;
+		int			idx;
 
 	public:
 		MateriaSource(void);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 16:13:06 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 16:14:47 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "MateriaSource.hpp"
 
 /**
@@ -82,8 +94,8 @@ void		MateriaSource::learnMateria(AMateria* materia)
 AMateria*	MateriaSource::createMateria(std::string const & type)
 {
 	AMateria*	materia;
-	int		count;
-	int		find;
+	int			count;
+	int			find;
 
 	count = 0;
 	find = -1;

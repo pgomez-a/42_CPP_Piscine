@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 15:23:19 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 15:23:46 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
@@ -12,7 +24,7 @@ class	Character : public ICharacter
 
 		std::string	name;
 		AMateria*	materia[4];
-		int		idx;
+		int			idx;
 
 	public:
 		Character(std::string const & name);
@@ -22,9 +34,9 @@ class	Character : public ICharacter
 		Character&	operator=(Character const & character);
 
 		std::string const &	getName(void) const;
-		void			equip(AMateria* m);
-		void			unequip(int idx);
-		void			use(int idx, ICharacter& target);
+		void				equip(AMateria* m);
+		void				unequip(int idx);
+		void				use(int idx, ICharacter& target);
 };
 
 #endif

@@ -1,21 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/25 15:16:15 by pgomez-a          #+#    #+#              #
+#    Updated: 2021/10/25 15:16:41 by pgomez-a         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 .PHONY:	all clean fclean re run
 
 NAME		= interfaces
 
 SRCS		= AMateria.cpp		\
-		  Cure.cpp		\
-		  Ice.cpp		\
-		  Character.cpp		\
-		  MateriaSource.cpp	\
-		  main.cpp
+			  Cure.cpp			\
+			  Ice.cpp			\
+			  Character.cpp		\
+			  MateriaSource.cpp	\
+			  main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-CXX		= clang++
+CXX			= clang++
 
 CXXFLAGS	= -Wall -Werror -Wextra
 
-RM		= rm -f
+RM			= rm -f
 
 all:		$(NAME)
 
@@ -28,7 +40,7 @@ clean:
 fclean:		clean
 	@ $(RM) $(NAME)
 
-re:		fclean all
+re:			fclean all
 
 run:		all
 	@ clear
