@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 16:25:13 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/10/25 16:29:47 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 /**
@@ -18,8 +30,7 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	else
-		this->_grade = grade;
+	this->_grade = grade;
 	return ;
 }
 
@@ -44,7 +55,8 @@ Bureaucrat::~Bureaucrat(void)
 
 Bureaucrat&	Bureaucrat::operator=(Bureaucrat const & bureaucrat)
 {
-	this->_grade = bureaucrat.getGrade();
+	if (this != &bureaucrat)
+		this->_grade = bureaucrat.getGrade();
 	return (*this);
 }
 
@@ -74,8 +86,7 @@ void			Bureaucrat::decGrade(void)
 {
 	if (this->_grade == 150)
 		throw Bureaucrat::GradeTooLowException();
-	else
-		this->_grade += 1;
+	this->_grade += 1;
 	return ;
 }
 
@@ -87,8 +98,7 @@ void			Bureaucrat::incGrade(void)
 {
 	if (this->_grade == 1)
 		throw Bureaucrat::GradeTooHighException();
-	else
-		this->_grade -= 1;
+	this->_grade -= 1;
 	return ;
 }
 
@@ -98,7 +108,7 @@ void			Bureaucrat::incGrade(void)
 
 const char*	Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade is Too Hight");
+	return ("Grade is Too High");
 }
 
 /**
