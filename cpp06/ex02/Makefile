@@ -1,9 +1,9 @@
 .PHONY:	all clean fclean re run
 
-NAME		= serial
+NAME		= identify
 
 SRCS		= main.cpp	\
-		  serial.cpp
+		  utils.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
