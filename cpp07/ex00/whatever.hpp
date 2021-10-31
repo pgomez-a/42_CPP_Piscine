@@ -3,7 +3,11 @@
 
 #include <iostream>
 
-template< typename T>
+/**
+ ** Swap the given arguments
+ **/
+
+template< typename T >
 void	swap(T & valOne, T & valTwo)
 {
 	T	valTmp;
@@ -14,13 +18,21 @@ void	swap(T & valOne, T & valTwo)
 	return ;
 }
 
-template< typename T>
+/**
+ ** Return the smallest argument
+ **/
+
+template< typename T >
 T	min(T const & valOne, T const & valTwo)
 {
 	return (valOne < valTwo ? valOne : valTwo);
 }
 
-template< typename T>
+/**
+ ** Return the biggest argument
+ **/
+
+template< typename T >
 T	max(T const & valOne, T const & valTwo)
 {
 	return (valOne > valTwo ? valOne : valTwo);
