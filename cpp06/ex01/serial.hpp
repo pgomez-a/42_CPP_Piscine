@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   serial.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/02 11:41:32 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/11/02 11:41:49 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SERIAL_HPP
 # define SERIAL_HPP
 
@@ -6,7 +18,7 @@
 typedef struct data_s
 {
 	std::string	strOne;
-	int		intOne;
+	int			intOne;
 	std::string	strTwo;
 }	Data;
 
