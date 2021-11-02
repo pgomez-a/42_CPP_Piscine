@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:15:12 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/10/25 17:25:52 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:13:56 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
-#include <exception>
 
 static void	search_leaks(void)
 {

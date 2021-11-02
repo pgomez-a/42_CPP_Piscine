@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:20:01 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/10/25 17:21:44 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:10:00 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  **/
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) :
-	Form("ShrubberyCreationForm", 50, 50), _target("Default")
+	Form("ShrubberyCreationForm", 145, 137), _target("Default")
 {
 	return ;
 }
