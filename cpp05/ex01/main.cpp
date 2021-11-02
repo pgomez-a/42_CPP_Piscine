@@ -6,14 +6,13 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:34:17 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/10/25 16:40:43 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:08:10 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include <iostream>
-#include <exception>
 
 static void	search_leaks(void)
 {
@@ -29,7 +28,6 @@ int	main(void)
 	Form		formTwo("PaperTwo", 2, 5);
 
 	atexit(search_leaks);
-	std::cout << std::endl;
 	std::cout << burOne << std::endl;
 	std::cout << burTwo << std::endl;
 	std::cout << formOne << std::endl;
