@@ -26,8 +26,8 @@ int main(int, char**)
 
 	//SCOPE
 	{
-		//Array<int> tmp = numbers;
-		//Array<int> test(tmp);
+		Array<int> tmp = numbers;
+		Array<int> test(tmp);
 	}
 
 	for (int i = 0; i < MAX_VAL; i++)

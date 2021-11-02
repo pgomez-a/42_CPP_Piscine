@@ -20,6 +20,7 @@ class	Array
 		}
 
 		Array(Array const & array) {
+			this->_list = new T[0];
 			*this = array;
 			return ;
 		}
@@ -30,6 +31,7 @@ class	Array
 		}
 
 		Array&	operator=(Array const & array) {
+			std::cout << "list: " << _list << std::endl;
 			if (this->_list)
 				delete [] this->_list;
 			this->_list = new T[array._nelems];
