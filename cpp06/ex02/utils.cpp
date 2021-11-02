@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/02 11:48:16 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/11/02 11:49:12 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "utils.hpp"
 
 /**
@@ -8,10 +20,10 @@
 Base*	generate(void)
 {
 	Base*	base;
-	A*	a_class;
-	B*	b_class;
-	C*	c_class;
-	int	random;
+	A*		a_class;
+	B*		b_class;
+	C*		c_class;
+	int		random;
 
 	std::srand(std::time(nullptr));
 	random = (std::rand() * std::rand()) % 3;
