@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/02 11:28:44 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/11/02 11:28:54 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Convert.hpp"
 
 /**
@@ -21,7 +33,7 @@ static char	cpp_parse_input(std::string user)
 	std::string	inf_float[3] = {"-inff", "+inff", "nanf"};
 	std::string	inf_double[3] = {"-inf", "+inf", "nan"};
 	char		type;
-	int		count;
+	int			count;
 
 	count = 0;
 	while (count < 3)

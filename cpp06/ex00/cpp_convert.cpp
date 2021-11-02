@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cpp_convert.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/02 11:33:08 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/11/02 11:38:11 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Convert.hpp"
 
 /**
@@ -8,7 +20,7 @@
 int	cpp_detected_char(std::string user)
 {
 	char	c_elem;
-	int	i_elem;
+	int		i_elem;
 	float	f_elem;
 	double	d_elem;
 
@@ -31,9 +43,9 @@ int	cpp_detected_char(std::string user)
 
 int	cpp_detected_int(std::string user)
 {
-	int	check;
+	int		check;
 	char	c_elem;
-	int	i_elem;
+	int		i_elem;
 	float	f_elem;
 	double	d_elem;
 
@@ -67,20 +79,15 @@ int	cpp_detected_int(std::string user)
 
 int	cpp_detected_float(std::string user)
 {
-	int	check;
+	int		check;
 	char	c_elem;
-	int	i_elem;
+	int		i_elem;
 	float	f_elem;
 	double	d_elem;
 
 	check = 0;
-	if (std::stod(user) >= std::numeric_limits<float>::lowest()
-		&& std::stod(user) <= std::numeric_limits<float>::max())
-	{
-		check = 1;
-		f_elem = std::stof(user);
-	}
-	else if (user == "+inff" || user == "-inff" || user == "nanf")
+
+	if (user == "+inff" || user == "-inff" || user == "nanf")
 	{
 		check = 1;
 		if (user == "+inff")
@@ -89,6 +96,12 @@ int	cpp_detected_float(std::string user)
 			f_elem = -std::numeric_limits<float>::infinity();
 		else
 			f_elem = std::numeric_limits<float>::quiet_NaN();
+	}
+	else if (std::stod(user) >= std::numeric_limits<float>::lowest()
+		&& std::stod(user) <= std::numeric_limits<float>::max())
+	{
+		check = 1;
+		f_elem = std::stof(user);
 	}
 	if (check == 1)
 	{
@@ -129,20 +142,15 @@ int	cpp_detected_float(std::string user)
 
 int	cpp_detected_double(std::string user)
 {
-	int	check;
+	int		check;
 	char	c_elem;
-	int	i_elem;
+	int		i_elem;
 	float	f_elem;
 	double	d_elem;
 
 	check = 0;
-	if (std::stod(user) >= std::numeric_limits<double>::lowest()
-		&& std::stod(user) <= std::numeric_limits<double>::max())
-	{
-		check = 1;
-		d_elem = std::stod(user);
-	}
-	else if (user == "+inf" || user == "-inf" || user == "nan")
+
+	if (user == "+inf" || user == "-inf" || user == "nan")
 	{
 		check = 1;
 		if (user == "+inf")
@@ -151,6 +159,12 @@ int	cpp_detected_double(std::string user)
 			d_elem = -std::numeric_limits<double>::infinity();
 		else
 			d_elem = std::numeric_limits<double>::quiet_NaN();
+	}
+	else if (std::stod(user) >= std::numeric_limits<double>::lowest()
+		&& std::stod(user) <= std::numeric_limits<double>::max())
+	{
+		check = 1;
+		d_elem = std::stod(user);
 	}
 	if (check == 1)
 	{
