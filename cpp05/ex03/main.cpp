@@ -6,7 +6,7 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:15:12 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/10/25 18:14:37 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:20:48 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 #include <iostream>
-#include <exception>
 
 static void	search_leaks(void)
 {
@@ -32,6 +31,7 @@ int	main(void)
 		Intern  	someRandomIntern;
 		Bureaucrat	bur("Wall-E", 45);
 		Form*   	rrf;
+
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
 		if (rrf)
