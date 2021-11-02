@@ -6,13 +6,12 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:24:39 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/10/25 16:32:09 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:02:18 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
-#include <exception>
 
 static void	search_leaks(void)
 {
@@ -28,7 +27,6 @@ int	main(void)
 		Bureaucrat	burOne("Dall-E", 5);
 		Bureaucrat	burTwo("Wall-E", 149);
 
-		std::cout << std::endl;
 		std::cout << burOne << std::endl;
 		std::cout << burTwo << std::endl;
 		burOne.incGrade();
