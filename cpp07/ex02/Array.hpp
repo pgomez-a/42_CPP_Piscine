@@ -8,35 +8,39 @@ class	Array
 {
 	public:
 		Array(void) {
-			this->_list = new T[0];
-			this->_elems = 0;
+			this->_nelems = 0;
 			return ;
 		}
 
 		Array(unsigned int n) {
-			this->_list = new T[n];
+			if (n > 0)
+				this->_list = new T[n];
 			this->_nelems = n;
 			return ;
 		}
 
 		Array(Array const & array) {
-			this->_list = new T[0];
+			this->_nelems = 0;
 			*this = array;
 			return ;
 		}
 
 		~Array(void) {
-			delete [] this->_list;
+			if (this->_nelems > 0)
+				delete [] this->_list;
 			return ;
 		}
 
 		Array&	operator=(Array const & array) {
-			if (this->_list)
+			if (this->_nelems > 0)
 				delete [] this->_list;
-			this->_list = new T[array._nelems];
 			this->_nelems = array._nelems;
-			for (size_t i = 0; i < array._nelems; i++)
-				this->_list[i] = array._list[i];
+			if (this->_nelems > 0)
+			{
+				this->_list = new T[array._nelems];
+				for (size_t i = 0; i < this->_nelems; i++)
+					this->_list[i] = array._list[i];
+			}
 			return (*this);
 		}
 
