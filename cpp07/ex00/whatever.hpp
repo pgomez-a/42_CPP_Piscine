@@ -7,7 +7,7 @@
  ** Swap the given arguments
  **/
 
-template< typename T >
+template < typename T >
 void	swap(T & valOne, T & valTwo)
 {
 	T	valTmp;
@@ -22,7 +22,7 @@ void	swap(T & valOne, T & valTwo)
  ** Return the smallest argument
  **/
 
-template< typename T >
+template < typename T >
 T	min(T const & valOne, T const & valTwo)
 {
 	return (valOne < valTwo ? valOne : valTwo);
@@ -32,7 +32,7 @@ T	min(T const & valOne, T const & valTwo)
  ** Return the biggest argument
  **/
 
-template< typename T >
+template < typename T >
 T	max(T const & valOne, T const & valTwo)
 {
 	return (valOne > valTwo ? valOne : valTwo);
