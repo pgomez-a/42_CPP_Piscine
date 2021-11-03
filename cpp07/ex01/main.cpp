@@ -50,8 +50,15 @@ void	to_lower(char & c)
 	return ;
 }
 
+static void	leaks(void)
+{
+	std::cout << std::endl;
+	system("leaks iter");
+}
+
 int	main(void)
 {
+	atexit(leaks);
 	{
 		std::cout << "***** INT  ARRAY *****" << std::endl;
 		int	list[5] = {0, 1, 2, 3, 4};
