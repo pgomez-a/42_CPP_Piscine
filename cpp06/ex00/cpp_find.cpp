@@ -6,11 +6,11 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:30:59 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/11/02 11:31:00 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/11/04 19:24:02 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include "convert.hpp"
 
 int	cpp_find_double(std::string user)
 {

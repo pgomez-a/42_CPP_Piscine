@@ -6,11 +6,11 @@
 /*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:33:08 by pgomez-a          #+#    #+#             */
-/*   Updated: 2021/11/02 11:38:11 by pgomez-a         ###   ########.fr       */
+/*   Updated: 2021/11/04 19:23:51 by pgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include "convert.hpp"
 
 /**
  ** Convert string to char

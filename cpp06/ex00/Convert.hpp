@@ -2,7 +2,6 @@
 # define CONVERT_HPP
 
 # include <iostream>
-# include <string>
 # include <limits>
 
 /**
@@ -11,8 +10,8 @@
 
 int	cpp_detected_char(std::string user);
 int	cpp_detected_int(std::string user);
-int     cpp_detected_float(std::string user);
-int     cpp_detected_double(std::string user);
+int	cpp_detected_float(std::string user);
+int	cpp_detected_double(std::string user);
 
 /**
  ** cpp_find.cpp
