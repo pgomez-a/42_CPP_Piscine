@@ -28,7 +28,6 @@ A class is a template. Defines how the objects of a certain data type will be. T
 - **[CPP00 - Introduction to C++](https://github.com/pgomez-a/42_CPP_Piscine/tree/master/cpp00)**
   - **Namespaces**
   - **Stdio streams**
-  - **Class / Instance**
   - **Member attributes / Member functions**
   - **This**
   - **Initialization list**
