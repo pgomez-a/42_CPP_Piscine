@@ -33,7 +33,6 @@ A class is a template. Defines how the objects of a certain data type will be. T
   - **Initialization list**
   - **Const**
   - **Visibility**
-  - **Class vs Struct**
   - **Accessors**
   - **Non-member attributes / Non-member functions**
   - **Pointers to members**
