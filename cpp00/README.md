@@ -32,6 +32,9 @@ Although these are the most important streams to consider, we can also find othe
   - **std::cin.ignore()** searches the line break up to a series of breaks that are indicated by the user. It also removes all items it finds from the buffer until it reaches de \n.
 
 ### What are member functions and member attributes?
+Once we understand what a class is, we see that it is made up of different values and functions. Values are known as **attributes** and **define all the properties of a class**. For example, let's imagine a kind of car. Like every car, our class will have an attribute that defines the number of wheels, an attribute that defines the type of car, another that defines the color, etc. So we can see how attributes are the characteristics that define a class.<br>
+On the other hand, we can also find functions inside the class. These functions are called **methods**. Methods provide a way to **access and modify the attributes of a class**. So if we have an attribute for the color of the car, every time we want to change the color of the class, we should have access to a change_color method. If there is no method to do this, in general we will not be able to change the color attribute.<br><br>
+All attributes and functions that are defined within a class are **member attributes** and **member functions**. Soon, we will see when we can modify attributes of a class directly or only using appropriate methods.
 
 ### This pointer
 It is defined within an object as a **pointer to the containing object**. This is done to be able to access all the elements of the object when we are inside it. The main reason for this is because if we are inside an object working with a variable received as an argument with the same name as the object's attribute, we can differentiate them using the **this** pointer.
