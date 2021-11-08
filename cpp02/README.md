@@ -9,7 +9,7 @@ There are two different types of polymorphism:
 - **Dynamic polymorphism:** one that does not specify the type of data on which the object should work, so the compiler cannot check if it is an error situation. This means that if there are any errors, you are notified at run time.
 - **Static polymorphism:** one in which attributes must specify their type before being used by the object for which the polymorphism is defined.
 
-This behavior is also known as operator overload. There can be more than one definition with the same behavior and prototype within the same scope. Each of these definitions must differ from the rest in the type of parameters received and the number of arguments passed as parameters. We cannot overload functions that only differ in return type.
+This behavior is also known as **operator overload**. There can be more than one definition with the same behavior and prototype within the same scope. Each of these definitions must differ from the rest in the type of parameters received and the number of arguments passed as parameters. We cannot overload functions that only differ in return type.
 
 ### Operator overload
 
