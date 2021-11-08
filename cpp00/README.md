@@ -55,6 +55,10 @@ The **const operator** is used to declare an **immutable object or variable**, o
 It's important to note that using the const operator doesn't mean that the value is stored in a read-only memory address. The use of the const operator tells the compiler to verify if the value declared as const is modified during execution so that it throws an error if it occurs, leading to not compiling the program.
 
 ### Visibility of classes
+Due to encapsulation, we have to deal with a simple but important concept which is the visibility of attributes and methods. As we have said, most of the time we have to use a method to access an attribute of an object. The fact that we cannot directly access the value comes from this concept: **visibility**. In C ++ we can find three types of visibility:
+- **Public visibility:** to this category belong all those attributes and methods of objects that can be accessed from outside the class.
+- **Private visibility:** private methods and attributes can only be accessed within the object that defines them.
+- **Protected visibility:** these attributes and methods are private except when inherited by another class.
 
 ### Differences between class and struct
 
