@@ -35,7 +35,6 @@ A class is a template. Defines how the objects of a certain data type will be. T
   - **Visibility**
   - **Accessors**
   - **Non-member attributes / Non-member functions**
-  - **Pointers to members**
 
 - **[CPP01 - Get in touch with pointers and references](https://github.com/pgomez-a/42_CPP_Piscine/tree/master/cpp01)**
   - **New & Delete** 
