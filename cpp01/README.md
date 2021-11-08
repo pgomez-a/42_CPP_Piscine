@@ -32,3 +32,10 @@ The main characteristics that we can highlight from all this are:
 - **A reference cannot be updated** (it always refers to the same value).
 
 ### File Streams
+So far, we have used the **\<iostream\>** library to use the **std::cin** and **std::cout** methods. This allows us both to read from the system's stdin and to write to the stdout. However, we can also use file streams to read data from some files and write data to other files.<br>
+<br>
+To be able to write to or read from a file, we use the **\<fstream\>** library. This library defines three new types of data that will allow us to achieve our goal:
+
+- **ofstream:** represents an output file stream and is used to create new files or write to files.
+- **ifstream:** represents an input file stream and is used to read data from files.
+- **fstream:** it is a general stream that is used to read and write, and can even create new files.
