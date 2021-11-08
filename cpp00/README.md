@@ -34,6 +34,12 @@ Although these are the most important streams to consider, we can also find othe
 ### What are member functions and member attributes?
 
 ### This pointer
+It is defined within an object as a **pointer to the containing object**. This is done to be able to access all the elements of the object when we are inside it. The main reason for this is because if we are inside an object working with a variable received as an argument with the same name as the object's attribute, we can differentiate them using the **this** pointer.
+
+    class compare_values(int val)
+    {
+        this->val = val // this->val refers to the class attribute
+    }
 
 ### How to initialize an object of a class?
 
