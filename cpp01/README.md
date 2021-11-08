@@ -15,5 +15,20 @@ In C, when we want to allocate some memory in the heap we use **malloc()**, whil
       delete [] numberTwo;
 
 ### How to use references?
+When a **reference** is declared, it is converted to an alternate name to refer to the variable it refers to. If you create a reference to a variable and change the value of the reference, the value of the variable will change, because both the reference and the variable are at the same memory address. However, if with pointers we must use * to access the content of the memory address it points to, references are treated as variables.<br> So to define a reference, **we use &**:
+
+      int  x = 10;
+      int& y = x;
+      
+      y = 2;
+      std::cout << x; // Output: 2
+      
+<br>    
+The main characteristics that we can highlight from all this are:
+
+- With a reference we can modify the value of the variable to which it refers.
+- We avoid using copies of objects and variables when passing them as arguments to methods and functions.
+- A reference can never be of type void.
+- **A reference cannot be updated** (it always refers to the same value).
 
 ### File Streams
