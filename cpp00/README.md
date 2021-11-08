@@ -51,6 +51,8 @@ There are some special methods that are used to initialize objects:
 - **Destructor:** used to free up resources that have been used by an object, since the object will no longer be used. It is also used to remove links between other objects and the current object. The call to this special method is also automatic when the object goes out of scope where it was declared.
 
 ### Const operator
+The **const operator** is used to declare an **immutable object or variable**, or to specify that no value can be modified within a function. In this way we avoid making unwanted changes over values that we don't want to change.<br>
+It's important to note that using the const operator doesn't mean that the value is stored in a read-only memory address. The use of the const operator tells the compiler to verify if the value declared as const is modified during execution so that it throws an error if it occurs, leading to not compiling the program.
 
 ### Visibility of classes
 
