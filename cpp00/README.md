@@ -45,6 +45,10 @@ It is defined within an object as a **pointer to the containing object**. This i
     }
 
 ### How to initialize an object of a class?
+There are some special methods that are used to initialize objects:
+- **Constructor:** subroutine whose mission is to initialize an object of a specific class. In the constructor the attributes of a new object are initialized. In C ++, a constructor is a special method of a class that is called automatically each time a new object is created. A constructor has the same name as the class it belongs to and never returns anything.
+
+- **Destructor:** used to free up resources that have been used by an object, since the object will no longer be used. It is also used to remove links between other objects and the current object. The call to this special method is also automatic when the object goes out of scope where it was declared.
 
 ### Const operator
 
