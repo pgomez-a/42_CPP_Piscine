@@ -60,10 +60,24 @@ Due to encapsulation, we have to deal with a simple but important concept which 
 - **Private visibility:** private methods and attributes can only be accessed within the object that defines them.
 - **Protected visibility:** these attributes and methods are private except when inherited by another class.
 
-### Differences between class and struct
-
 ### What are accessors?
+For security reasons, most of the time we will implement all the attributes of an object as private. Therefore, in order to modify them or obtain their value, we have to define specific methods that allow us both. Thus, if we want **to obtain the value of a specific object**, we are going to define an accessor called **getter**, while if we want **to modify the value of an object** we are going to implement a mutator, also known as a **setter**. With both methods we will get access to a specific value of a class, so if the class has two values we will have to implement two setters and two getters.
+
+    // setter
+    void        setColor(std::string color)
+    {
+        this->_color = color;
+    }
+    
+    // getter
+    std::string getColor(void) const
+    {
+        return (this->_color);
+    }
 
 ### Non-member attributes & Non-member functions
+We already know what member functions and member attributes are, but we still don't know what non-member functions and non-member attributes are, so let's define them in simple words:
+- **Non-member attributes:** A non-member attribute is an attribute that belongs to the entire class and not just to an object, so if an object modifies this value, the change will affect all objects of the same class.
+- **Non-member functions:** the concept is the same as with non-member attributes. These functions do not have the this pointer because they do not refer to an object but to a class.
 
-### Pointers to members
+Both attributes and methods must be declared static outside the class to be considered non-members.
