@@ -12,5 +12,7 @@ There are two different types of polymorphism:
 This behavior is also known as **operator overload**. There can be more than one definition with the same behavior and prototype within the same scope. Each of these definitions must differ from the rest in the type of parameters received and the number of arguments passed as parameters. We cannot overload functions that only differ in return type.
 
 ### Operator overload
+We can redefine or overload most of the operators that come with C++ by default, so that **we can do operations with data types that could not otherwise be operated**. We refer to functions that are preceded by the **keyword "operator"** and accompanied by the operator to be overloaded. However, because it is a function, it must have its own return value and a list of parameters.<br><br>
+So imagine you have two classes of animals and you want to multiply both, why would you want to multiply two animals? I don't know, but the truth is that you can do it thanks to the overload. Of course, once mastered, you will fall in love with the overload. Now imagine you want to check if two classes are equal, how could you compare two objects that are not built into C ++ by default? Now you know how to answer this.
 
 ### Canonical form - Standard for classes
