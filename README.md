@@ -48,8 +48,6 @@ A class is a template. Defines how the objects of a certain data type will be. T
 
 - **[CPP03 - Take a giant step forward](https://github.com/pgomez-a/42_CPP_Piscine/tree/master/cpp03)**
   - **Inheritance**
-  - **Abstract classes**
-  - **Interfaces**
 
 - **[CPP04 - Because abstraction is cool](https://github.com/pgomez-a/42_CPP_Piscine/tree/master/cpp04)**
   - **Sub-typing polymorphism**
