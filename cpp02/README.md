@@ -16,3 +16,8 @@ We can redefine or overload most of the operators that come with C++ by default,
 So imagine you have two classes of animals and you want to multiply both, why would you want to multiply two animals? I don't know, but the truth is that you can do it thanks to the overload. Of course, once mastered, you will fall in love with the overload. Now imagine you want to check if two classes are equal, how could you compare two objects that are not built into C ++ by default? Now you know how to answer this.
 
 ### Canonical form - Standard for classes
+In **C ++** there are four different modules that the compiler will create in case we don't provide ours:
+- **Default constructor:** which has no parameters.
+- **Copy constructor:** which takes an object of the same class as a parameter.
+- **Destructor:** to manage resources that are no longer going to be used.
+- **Assignment operator overload:** which allows us to match two objects of the same type as if they were, for example, two ints.
