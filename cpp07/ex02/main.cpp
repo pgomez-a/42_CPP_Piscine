@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 11:09:15 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/11/09 11:13:35 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Array.hpp"
 
@@ -133,7 +145,7 @@ int	main(void)
 		std::cout << std::endl << std::endl;
 
 		std::cout << "***** GET LEN *****" << std::endl;
-		Array<int>	lenOne(5);
+		Array<int>		lenOne(5);
 		Array<float>	lenTwo(47);
 
 		std::cout << "Numbers: " << numbers.size() << std::endl;
