@@ -43,6 +43,7 @@ Span&	Span::operator=(Span const & span)
 	if (this != &span)
 	{
 		this->_data.clear();
+		this->_size = span._size;
 		ptr_span = const_cast<Span *>(&span);
 		it = ptr_span->_data.begin();
 		while (it != ptr_span->_data.end())

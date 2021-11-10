@@ -13,7 +13,7 @@ class	Span
 
 		Span&	operator=(Span const & span);
 
-		void	showNumbers(void); // Borrar
+		void	showNumbers(void);
 		void	addNumber(int number);
 		int	shortestSpan(void) const;
 		int	longestSpan(void) const;
