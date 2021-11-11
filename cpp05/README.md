@@ -6,3 +6,26 @@
 A nested class is a **class that is defined within the definition of another class**. We have to consider nested classes as yet another attribute. Like every class, it will have its own constructor, destructor, and attributes. And if you wonder about its relationship with inheritance, the truth is that there are no similarities. A nested class does not inherit from the class in which it is defined. **It will only act as one more attribute**, so we could define specific methods to treat them.
 
 ### Exceptions
+An **exception** is a **problem that appears during the execution of a program**. An exception in C ++ is a response to an exceptional circumstance that occurs during the execution of a program, such as dividing by 0. <br>
+Exceptions will allow us to transfer control of one part of our program to another part that can handle that error. Because of this, exceptions in C ++ are built on:
+- **throw:** the program throws an exception when a problem is detected.
+- **catch:** an exception is caught with an exception handler in the place where the problem is to be handled.
+- **try:** identifies a block of code so that special exceptions can be caught.
+
+### Throw exceptions
+Exceptions can be thrown anywhere in the program using the **throw keyword**:
+
+    if (this->_size > 10)
+      throw "The size is too big";
+      
+The operand determines the type of exception, being able to throw **any expression**, so the result of the expression determines the type of exception thrown.
+
+### Catch exceptions
+The **try block** is followed by the **catch block**, which can catch all kinds of exceptions. The type of exception to catch must be specified. This is determined by the type used in the catch block declaration:
+
+    try {
+      // code to detect the exception
+    }
+    catch (ExceptinType e) {
+      // code to manage the exception
+    }
