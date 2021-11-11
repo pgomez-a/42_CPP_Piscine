@@ -178,18 +178,35 @@ class	MutantStack
 					return (false);
 				}
 
+				void				setPointer(typename std::list<T>::iterator it)
+				{
+					this->_pointer = it;
+					return ;
+				}
+
+				typename std::list<T>::iterator	getPointer(void) const
+				{
+					return (this->_pointer);
+				}
+
 			private:
 				typename std::list<T>::iterator	_pointer;
 		};
 
-		typename std::list<T>::iterator	begin(void)
+		iterator	begin(void)
 		{
-			return (this->_data.begin());
+			iterator	output;
+
+			output.setPointer(this->_data.begin());
+			return (output);
 		}
 
-		typename std::list<T>::iterator	end(void)
+		iterator	end(void)
 		{
-			return (this->_data.end());
+			iterator	output;
+
+			output.setPointer(this->_data.end());
+			return (output);
 		}
 
 	private:
