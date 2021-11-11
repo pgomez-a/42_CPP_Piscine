@@ -8,20 +8,24 @@ template < typename T >
 class	MutantStack
 {
 	public:
-		MutantStack(void) {
+		MutantStack(void)
+		{
 			return ;
 		}
 
-		MutantStack(MutantStack const & mstack) {
+		MutantStack(MutantStack const & mstack)
+		{
 			*this = mstack;
 			return ;
 		}
 
-		~MutantStack(void) {
+		~MutantStack(void)
+		{
 			return ;
 		}
 
-		MutantStack&	operator=(MutantStack const & mstack) {
+		MutantStack&	operator=(MutantStack const & mstack)
+		{
 			MutantStack*			ptr_mstack;
 			typename std::list<T>::iterator	beg;
 
@@ -39,30 +43,24 @@ class	MutantStack
 			return (*this);
 		}
 
-		bool		empty(void) const {
+		bool		empty(void) const
+		{
 			return (this->_data.empty());
 		}
 
-		size_t		size(void) const {
+		size_t		size(void) const
+		{
 			return (this->_data.size());
 		}
 
-		T		top(void) {
-			typename std::list<T>::iterator	beg;
-			T				elem;
-
-			beg = this->_data.begin();
-			elem = *beg;
-			return (elem);
+		T&		top(void)
+		{
+			return (*(this->_data.begin()));
 		}
 
-		T const&	top(void) const {
-			typename std::list<T>::iterator	beg;
-			T				elem;
-
-			beg = this->_data.begin();
-			elem = *beg;
-			return (elem);
+		T const &	top(void) const
+		{
+			return (*(this->_data.begin()));
 		}
 
 		void		push(T const & val)
@@ -78,6 +76,120 @@ class	MutantStack
 		{
 			this->_data.pop_front();
 			return ;
+		}
+
+		class	iterator
+		{
+			public:
+				iterator(void)
+				{
+					return ;
+				}
+
+				iterator(iterator const & it)
+				{
+					this->_pointer = it._pointer;
+					return ;
+				}
+
+				~iterator(void)
+				{
+					return ;
+				}
+
+				iterator&	operator=(iterator const & it)
+				{
+					this->_pointer = it._pointer;
+					return (*this);
+				}
+
+				iterator&	operator=(typename std::list<T>::iterator const it)
+				{
+					this->_pointer = it; 
+					return (*this);
+				}
+
+				T		operator*(void) const
+				{
+					return (*(this->_pointer));
+				}
+
+				iterator	operator++(int)
+				{
+					iterator	output;
+
+					output = *this;
+					this->_pointer++;
+					return (output);
+				}
+
+				iterator	operator++(void)
+				{
+					iterator	output;
+
+					this->_pointer++;
+					output = *this;
+					return (output);
+				}
+
+				iterator	operator--(int)
+				{
+					iterator	output;
+
+					output = *this;
+					this->_pointer--;
+					return (output);
+				}
+
+				iterator	operator--(void)
+				{
+					iterator	output;
+
+					this->_pointer--;
+					output = *this;
+					return (output);
+				}
+
+				bool				operator==(iterator const & it)
+				{
+					if (this->_pointer == it._pointer)
+						return (true);
+					return (false);
+				}
+
+				bool				operator!=(iterator const & it)
+				{
+					if (this->_pointer != it._pointer)
+						return (true);
+					return (false);
+				}
+
+				bool				operator==(typename std::list<T>::iterator it)
+				{
+					if (this->_pointer == it)
+						return (true);
+					return (false);
+				}
+
+				bool				operator!=(typename std::list<T>::iterator it)
+				{
+					if (this->_pointer != it)
+						return (true);
+					return (false);
+				}
+
+			private:
+				typename std::list<T>::iterator	_pointer;
+		};
+
+		typename std::list<T>::iterator	begin(void)
+		{
+			return (this->_data.begin());
+		}
+
+		typename std::list<T>::iterator	end(void)
+		{
+			return (this->_data.end());
 		}
 
 	private:
