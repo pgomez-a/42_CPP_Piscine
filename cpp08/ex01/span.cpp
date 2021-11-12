@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   span.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/12 16:26:14 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/11/12 16:26:44 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "span.hpp"
 
 /**
@@ -91,7 +103,7 @@ void	Span::showNumbers(void)
 
 int	Span::shortestSpan(void) const
 {
-	std::list<int>			tmp;
+	std::list<int>				tmp;
 	std::list<int>::iterator	beg;
 	std::list<int>::iterator	next;
 	int				span;

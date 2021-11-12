@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mutantstack.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgomez-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/12 16:27:02 by pgomez-a          #+#    #+#             */
+/*   Updated: 2021/11/12 16:49:49 by pgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 
@@ -15,7 +27,7 @@ class	MutantStack : public std::stack<T, Container>
 		virtual ~MutantStack(void) {}
 
 
-		typedef typename std::stack<T, Container>::container_type::iterator iterator;
+		typedef typename Container::iterator iterator;
 
 		iterator	begin(void)
 		{
