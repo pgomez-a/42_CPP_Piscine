@@ -29,7 +29,7 @@ The **try block** is followed by the **catch block**, which can catch all kinds 
     catch (ExceptinType e) {
       // code to manage the exception
     }
-    cathc (...) {
+    catch (...) {
       // code to handle exception regardless of type
     }
     
