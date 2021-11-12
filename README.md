@@ -58,7 +58,6 @@ A class is a template. Defines how the objects of a certain data type will be. T
   - **Exceptions**
 
 - **[CPP06 - Cast over here, cast over there](https://github.com/pgomez-a/42_CPP_Piscine/tree/master/cpp06)**
-  - **C cast**
   - **Static cast**
   - **Dynamic cast**
   - **Reinterpret cast**
