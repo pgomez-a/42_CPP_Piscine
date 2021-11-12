@@ -29,3 +29,16 @@ The **try block** is followed by the **catch block**, which can catch all kinds 
     catch (ExceptinType e) {
       // code to manage the exception
     }
+    cathc (...) {
+      // code to handle exception regardless of type
+    }
+    
+If you want to handle all kinds of exception, you should not specify the type -> **catch (...)**
+
+### std::exceptions
+- **std::exception     ->** any exception from std
+- **std::bad_alloc     ->** released by new
+- **std::bad_cast      ->** thrown by dynamic cast
+- **std::bad_exception ->** unexpected exception
+- **std::range_error   ->** attempt to store a value out of range
+- **std::runtime_error ->** error difficult to detect when reading code
