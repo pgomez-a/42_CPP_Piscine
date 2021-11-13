@@ -55,5 +55,3 @@ To make a cast operator to a generic type called generic, we must do **\"operato
         private:
             float   _value;
     };
-
-### Explicit keyword
