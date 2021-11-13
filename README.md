@@ -63,7 +63,6 @@ A class is a template. Defines how the objects of a certain data type will be. T
   - **Reinterpret cast**
   - **Const cast**
   - **Cast operators**
-  - **Explicit keyword**
 
 - **[CPP07 - The objective is clearer](https://github.com/pgomez-a/42_CPP_Piscine/tree/master/cpp07)**
   - **Templates**
