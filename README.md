@@ -64,8 +64,6 @@ A class is a template. Defines how the objects of a certain data type will be. T
 
 - **[CPP07 - The objective is clearer](https://github.com/pgomez-a/42_CPP_Piscine/tree/master/cpp07)**
   - **Templates**
-  - **Default type**
-  - **Specialization**
 
 - **[CPP08 - Take advantage of standard tools](https://github.com/pgomez-a/42_CPP_Piscine/tree/master/cpp08)**
   - **STL**
