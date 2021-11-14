@@ -28,3 +28,11 @@ Many containers have common implementations, so when deciding which types to cho
 - - Priority_queue
 
 ### Iterators
+An iterator is an object that points to an element within a container. **We can use it to move around the contents of a container**. It is similar to a pointer, without being exactly the same.<br>
+Depending on the type of iterator, we can classify them into five categories:
+- **Random Access**
+- **Bidirectional**
+- **Forward**
+- **Input / Output Iterators**
+
+Not all containers use all types of iterators, so we need to make sure that the containers we use have the required iterators.
