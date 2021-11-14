@@ -1,3 +1,5 @@
+<img width="1916" alt="Graded by peers" src="https://user-images.githubusercontent.com/74931024/141690037-0f11fd9e-fb0d-4236-aa03-3e69e797b953.png">
+
 **If you want to learn more about IT topics, visit my website:** [**IA Notes**](https://ia-notes.com/)
 
 ### Containers
