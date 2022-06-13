@@ -4,7 +4,7 @@ related to the world of Object Oriented Programming, inheritance, polymorphism a
 that these notes are just a little information about everything that you will have to study if you want to do a good project. In the end, this is just an attempt to
 provide you with a learning path during the development of your project, but at no point do I present it as the only source of information to be consulted. :)<br>
 
-**If you want to learn more about IT topics, visit my website:** [**IA Notes**](https://ia-notes.com/)
+**If you want to learn more about IT topics, [I invite you to join my Patreon channel](https://www.patreon.com/pgomeza) and visit my website:** [**IA Notes**](https://ia-notes.com/)
 
 ### What is C++?
 C ++ is a programming language, which comes from the **extension of the C programming language**, which allows us to **manipulate objects**, these being a new way of programming that we don't really have in C. Therefore, we can understand it as an extension of C that will allow us to get the best of two worlds, procedural programming and object-oriented programming.
